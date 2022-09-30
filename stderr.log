@@ -1,0 +1,98 @@
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'imperial.techevery.ng'. You may need to add 'imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Not Found: /static/admin/css/fonts.css
+Not Found: /favicon.ico
