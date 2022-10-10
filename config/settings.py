@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v8oic5t9+l8#)iol2vo4=-4scx7!!4-)19(u%fznj$egra+#1y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['imperial.techevery.ng', '127.0.0.1']
+ALLOWED_HOSTS = ['mperial.techevery.ng', 'imperial.techevery.ng', '127.0.0.1']
 
 
 # Application definition
@@ -121,8 +121,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techwwpp_imperial',
-        'USER': 'techwwpp_imperial_user',
+        'NAME': 'techwwpp_mperial',
+        'USER': 'techwwpp_mperial_user',
         'PASSWORD': 'Techpa$$11',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -175,3 +175,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/techwwpp/imperial.techevery.ng/media'
 STATIC_ROOT = '/home/techwwpp/imperial.techevery.ng/static'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST_USER = 'noreply@techevery.ng'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST = 'techevery.ng'
+EMAIL_HOST_PASSWORD = 'Techpa$$11'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -240,3 +240,1710 @@ Method Not Allowed: /accounts/api/register
 Not Found: /favicon.ico
 Not Found: /favicon.ico
 Bad Request: /accounts/api/register
+Not Found: /
+Not Found: /
+Not Found: /
+Method Not Allowed: /accounts/api/register
+Method Not Allowed: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Method Not Allowed: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Unsupported Media Type: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Bad Request: /accounts/api/register
+Not Found: /account/signup
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Method Not Allowed: /accounts/api/register
+Method Not Allowed: /accounts/api/register
+Not Found: /accounts/api/login
+Not Found: /accounts/api/
+Not Found: /accounts/api/login
+Not Found: /
+Not Found: /favicon.ico
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1044, "Access denied for user 'techwwpp_imperial_user'@'localhost' to database 'techwwpp_imperial'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1393, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1044, "Access denied for user 'techwwpp_imperial_user'@'localhost' to database 'techwwpp_imperial'")
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1393, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1393, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1393, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (1045, "Access denied for user 'techwwpp_imperial_user'@'localhost' (using password: YES)")
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Not Found: /
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'mperial.techevery.ng'. You may need to add 'mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'techwwpp_mperial.accounts_user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 441, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/views.py", line 90, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/forms/forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/forms/forms.py", line 200, in errors
+    self.full_clean()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/forms/forms.py", line 438, in full_clean
+    self._clean_form()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/forms/forms.py", line 459, in _clean_form
+    cleaned_data = self.clean()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/forms.py", line 217, in clean
+    self.user_cache = authenticate(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'techwwpp_mperial.accounts_user' doesn't exist")
+Not Found: /accounts
+Not Found: /accounts/api
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Not Found: /
+Bad Request: /
+Not Found: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+Not Found: /
+Not Found: /s/36372e3232332e3131382e3239/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+Not Found: /info.php
+Not Found: /.DS_Store
+Not Found: /telescope/requests
+Not Found: /debug/default/view
+Not Found: /
+Not Found: /.env
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /debug/default/view
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+Bad Request: /s/36372e3232332e3131382e3239/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /.DS_Store
+Not Found: /about
+Bad Request: /.env
+Not Found: /v2/_catalog
+Bad Request: /
+Bad Request: /telescope/requests
+Not Found: /login.action
+Not Found: /config.json
+Not Found: /api/search
+Bad Request: /info.php
+Bad Request: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /v2/_catalog
+Bad Request: /api/search
+Bad Request: /config.json
+Bad Request: /about
+Bad Request: /login.action
+Not Found: /
+Not Found: /info.php
+Not Found: /s/36372e3232332e3131382e3239/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+Not Found: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+Not Found: /debug/default/view
+Not Found: /.DS_Store
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Not Found: /.env
+Bad Request: /debug/default/view
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /.DS_Store
+Bad Request: /.env
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+Bad Request: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /info.php
+Bad Request: /telescope/requests
+Bad Request: /s/36372e3232332e3131382e3239/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+Bad Request: /
+Not Found: /telescope/requests
+Not Found: /api/search
+Not Found: /config.json
+Not Found: /about
+Not Found: /v2/_catalog
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /api/search
+Bad Request: /v2/_catalog
+Bad Request: /login.action
+Bad Request: /config.json
+Bad Request: /about
+Not Found: /login.action
+Not Found: /api/register
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Method Not Allowed: /accounts/api/register
+Bad Request: /accounts/api/register
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+Method Not Allowed: /accounts/api/register
+Bad Request: /accounts/api/register
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 646, in get
+    num = len(clone)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib64/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'techwwpp_mperial.django_session' doesn't exist")
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Not Found: /
+Bad Request: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /http%3A/www.mperial.techevery.ng%3A80/
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /accounts/api/reister
+Method Not Allowed: /accounts/api/register
+Bad Request: /accounts/api/register
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Not Found: /
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
