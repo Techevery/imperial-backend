@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v8oic5t9+l8#)iol2vo4=-4scx7!!4-)19(u%fznj$egra+#1y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['imperial.techevery.ng', '127.0.0.1']
+ALLOWED_HOSTS = ['imperial.techevery.ng', '127.0.0.1', '*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
+    'phonenumber_field',
     "corsheaders",
     'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
@@ -120,12 +121,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techwwpp_imperial',
-        'USER': 'techwwpp_imperial_user',
-        'PASSWORD': 'Techpa$$11',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -173,5 +170,5 @@ STATICFILES_DIRS = [(BASE_DIR.joinpath('static'))]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/techwwpp/imperial.techevery.ng/media'
-STATIC_ROOT = '/home/techwwpp/imperial.techevery.ng/static'
+MEDIA_ROOT = 'C:/Users/Tolu-ene/Desktop/Imperial-backend/storage/media'
+STATIC_ROOT = 'C:/Users/Tolu-ene/Desktop/Imperial-backend/storage/static'
