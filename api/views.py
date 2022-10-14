@@ -5,8 +5,10 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated
 from django.http.request import HttpRequest
+from django.contrib.auth import get_user_model
 from django.http.response import HttpResponse
 from django.http import JsonResponse
+from rest_framework.views import APIView
 from . import forms
 from .models import Flat, Property
 from .models import Property
@@ -136,5 +138,10 @@ def flat_detail(request, id, format=None):
 
     if request.method == 'GET':
         serializer = FlatSerializer(flat)
+        return Response(serializer.data)
+        
+class CurrentUserView(APIView):
+    def get(self, request):
+        serializer = UserSerializer(request.user)
         return Response(serializer.data)
 

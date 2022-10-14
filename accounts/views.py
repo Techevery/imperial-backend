@@ -4,6 +4,8 @@ from .forms import CustomUserForm
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .serializer import *
+from django.core.mail import send_mail
+
 
 from rest_framework.exceptions import APIException
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -31,6 +33,9 @@ class LandlordCreateAPIView(CreateAPIView):
         if serializer.is_valid():
             # logger.info('serializer is valid')
             user = serializer.save()
+            data = serializer.data
+            
+                
             print(user)
             return Response({
                 'message': "Landlord Registration successful",
@@ -57,6 +62,16 @@ class ManagerCreateAPIView(CreateAPIView):
         if serializer.is_valid():
             # logger.info('serializer is valid')
             user = serializer.save()
+            email = data.get('email')
+            password = (user['password'])
+                
+            send_mail(
+                'Mperial Account',
+                'Here are your login details, email: {femail}, password: {fpassword}'.format(femail=email, fpassword=password),
+                'noreply@techevery.ng',
+                [email],
+                fail_silently=False,
+)
             print(user)
             return Response({
                 'message': "Manager Registration successful",
