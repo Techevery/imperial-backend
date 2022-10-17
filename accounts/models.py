@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import UserManager as BaseUserManager
 from phonenumber_field.modelfields import PhoneNumberField
-from api.models import Property, Flat
+from api.models import Property, Flat, AddPayment
 from tabnanny import verbose
 
 
@@ -75,10 +75,14 @@ class Manager(models.Model):
 
 class Tenant(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    tenant_name = models.CharField(max_length=200)
-    tenant_phone_number = PhoneNumberField(unique=True, null=False, blank=False)
-    flat_id = models.ForeignKey(Flat, related_name='Flat', on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200, null=True, blank=True)
+    phone_number = PhoneNumberField(unique=True, null=False, blank=False)
+    flat = models.ForeignKey(Flat, related_name='Flat', on_delete=models.CASCADE)
     property = models.ForeignKey(Property, related_name='House', on_delete=models.CASCADE)
+    payment = models.ManyToManyField(AddPayment, related_name='AddPayment')
+
+
 
     class Meta():
         verbose_name_plural = 'Tenant'

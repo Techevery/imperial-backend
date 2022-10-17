@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Property, Flat
+from .models import Property, Flat, AddPayment
 # Register your models here.
 
 class BookSlotAdmin(admin.ModelAdmin):
@@ -18,4 +18,5 @@ class SlotAdmin(admin.ModelAdmin):
     search_fields = ['property_name']
 admin.site.register(Property, SlotAdmin)
 admin.site.register(Flat, BookSlotAdmin)
+admin.site.register(AddPayment)
 

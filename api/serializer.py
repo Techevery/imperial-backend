@@ -8,6 +8,7 @@ from phonenumber_field.formfields import PhoneNumberField
 from django import forms
 from django.db import transaction
 from .models import *
+from accounts.models import Manager
 # Register serializer
 from rest_framework.exceptions import APIException
 from drf_extra_fields.fields import Base64ImageField
@@ -64,6 +65,17 @@ class PropertySerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        fields = '__all__'
+        
+class ManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manager
+        fields = '__all__'
+        
+        
+class AddPaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddPayment
         fields = '__all__'
         
             

@@ -43,3 +43,4 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(LandLord)
 admin.site.register(Manager)
+admin.site.register(Tenant)

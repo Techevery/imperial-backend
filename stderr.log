@@ -11287,3 +11287,2018 @@ Unauthorized: /api/token/
 Bad Request: /api/token/refresh
 Unauthorized: /api/user-details
 Unauthorized: /api/user-details
+Unauthorized: /api/user-details
+Unauthorized: /api/add-property
+Unauthorized: /api/token/refresh
+OrderedDict([('name', 'Flat 2'), ('number_of_rooms', 2), ('number_of_living_rooms', 3), ('number_of_kitchens', 1), ('number_of_toilets', 2), ('description', 'Spacious Apartment, 24/7 security, with constant electricity and water'), ('test_id', 3)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Unauthorized: /api/add-property
+[UID:1018][675968] packetLen < 0
+OrderedDict([('name', '13th squad'), ('number_of_rooms', 13), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 4), ('description', 'shinigami house'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Method Not Allowed: /api/add-property
+OrderedDict([('name', '13th squad'), ('number_of_rooms', 13), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'shinigami home'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', '13th squad'), ('number_of_rooms', 13), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'shinigami home'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', '13th squad'), ('number_of_rooms', 13), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'shinigami home'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', '13th squad'), ('number_of_rooms', 13), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'shinigami home'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Unauthorized: /api/add-property
+Unauthorized: /api/add-property
+[UID:1018][695500] packetLen < 0
+OrderedDict([('name', 'Flat 2'), ('number_of_rooms', 2), ('number_of_living_rooms', 3), ('number_of_kitchens', 1), ('number_of_toilets', 2), ('description', 'Spacious Apartment, 24/7 security, with constant electricity and water'), ('test_id', 3)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 59, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Bad Request: /api/add-property
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 89, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Bad Request: /api/add-property
+Bad Request: /api/add-property
+Bad Request: /api/add-property
+Bad Request: /api/add-property
+Unauthorized: /api/user-details
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Not Found: /api/get-property/1/flats
+Method Not Allowed: /api/token/
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Not Found: /api/get-property/4/flats
+Not Found: /api/managers
+Unauthorized: /api/get-property/2
+Not Found: /api/managers
+Not Found: /api/managers
+Not Found: /api/managers
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 146, in get
+    serializer = UserSerializer(request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/managers
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 153, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/relations.py", line 190, in get_attribute
+    return super().get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `user` on serializer `ManagerSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'user'.
+Internal Server Error: /api/managers
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 153, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1106, in get_field_names
+    raise TypeError(
+TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
+Internal Server Error: /api/managers
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 153, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1106, in get_field_names
+    raise TypeError(
+TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
+Internal Server Error: /api/managers
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 153, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 1106, in get_field_names
+    raise TypeError(
+TypeError: The `fields` option must be a list or tuple or "__all__". Got str.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/managers
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'QuerySet' object has no attribute 'first_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 153, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `first_name` on serializer `ManagerSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'first_name'.
+Unauthorized: /api/add-property
+[UID:1018][777033] packetLen < 0
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Unauthorized: /api/add-property
+[UID:1018][826217] packetLen < 0
+Unauthorized: /api/add-property
+[UID:1018][826218] packetLen < 0
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', 'Flat 2'), ('number_of_rooms', 2), ('number_of_living_rooms', 3), ('number_of_kitchens', 1), ('number_of_toilets', 2), ('description', 'Spacious Apartment, 24/7 security, with constant electricity and water'), ('test_id', 3)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Unauthorized: /api/add-property
+[UID:1018][856982] packetLen < 0
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test'), ('test_id', 1)])
+Internal Server Error: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 90, in post
+    prop = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/api/serializer.py", line 60, in create
+    flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
+TypeError: create() got multiple values for keyword argument 'test_id'
+OrderedDict([('name', 'Big flat'), ('number_of_rooms', 2), ('number_of_living_rooms', 3), ('number_of_kitchens', 1), ('number_of_toilets', 2), ('description', 'Spacious Apartment, 24/7 security, with constant electricity and water')])
+Single Du
+Method Not Allowed: /api/managers
+[UID:1018][867654] packetLen < 0
+[UID:1018][868758] packetLen < 0
+Bad Request: /api/add-property
+OrderedDict([('name', 'tet'), ('number_of_rooms', 14), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 1), ('description', 'test')])
+seretai
+Not Found: /favicon.ico
+Unauthorized: /api/all-properties
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'password'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    return Response(serializer.data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `password` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'password'.
+Not Found: /accounts/tenant_register
+Not Found: /accounts/tenant_register
+Not Found: /accounts/tenant_register
+Not Found: /accounts/tenant_register
+Method Not Allowed: /accounts/landlord_register
+Internal Server Error: /accounts/landlord_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 35, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 144, in create
+    first_name = validated_data['first_name']
+KeyError: 'first_name'
+[ERROR] [UID:1018][1360120] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 53, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    if not is_valid_path(request.path_info, urlconf):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 155, in is_valid_path
+    return resolve(path, urlconf)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 21, in <module>
+    path('accounts/', include('accounts.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/accounts/urls.py", line 2, in <module>
+    from .api import RegisterApi
+  File "/home/techwwpp/imperial-app-backend/accounts/api.py", line 3, in <module>
+    from .serializer import RegisterSerializer, UserSerializer, RegisterLandlord
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 119, in <module>
+    class LandlordCreateSerializer(serializers.Serializer):
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 124, in LandlordCreateSerializer
+    class Meta:
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 125, in Meta
+    model = Landlord
+NameError: name 'Landlord' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 21, in <module>
+    path('accounts/', include('accounts.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/accounts/urls.py", line 2, in <module>
+    from .api import RegisterApi
+  File "/home/techwwpp/imperial-app-backend/accounts/api.py", line 3, in <module>
+    from .serializer import RegisterSerializer, UserSerializer, RegisterLandlord
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 119, in <module>
+    class LandlordCreateSerializer(serializers.Serializer):
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 124, in LandlordCreateSerializer
+    class Meta:
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 125, in Meta
+    model = Landlord
+NameError: name 'Landlord' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 21, in <module>
+    path('accounts/', include('accounts.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/accounts/urls.py", line 2, in <module>
+    from .api import RegisterApi
+  File "/home/techwwpp/imperial-app-backend/accounts/api.py", line 3, in <module>
+    from .serializer import RegisterSerializer, UserSerializer, RegisterLandlord
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 119, in <module>
+    class LandlordCreateSerializer(serializers.Serializer):
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 124, in LandlordCreateSerializer
+    class Meta:
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 125, in Meta
+    model = Landlord
+NameError: name 'Landlord' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 131, in __call__
+    response = self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 21, in <module>
+    path('accounts/', include('accounts.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/accounts/urls.py", line 2, in <module>
+    from .api import RegisterApi
+  File "/home/techwwpp/imperial-app-backend/accounts/api.py", line 3, in <module>
+    from .serializer import RegisterSerializer, UserSerializer, RegisterLandlord
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 119, in <module>
+    class LandlordCreateSerializer(serializers.Serializer):
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 124, in LandlordCreateSerializer
+    class Meta:
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 125, in Meta
+    model = Landlord
+NameError: name 'Landlord' is not defined
+Internal Server Error: /accounts/landlord_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 35, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 142, in create
+    first_name = validated_data['first_name']
+KeyError: 'first_name'
+Internal Server Error: /accounts/landlord_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 35, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 142, in create
+    user = User.objects.create(email=email, user_type='landlord')
+KeyError: 'first_name'
+Internal Server Error: /accounts/landlord_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 35, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 142, in create
+KeyError: 'first_name'
+{'email': 'new@mail.com', 'password': '12345678', 'user_id': 44, 'user_type': 'landlord'}
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /favicon.ico
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Unauthorized: /api/token/
+Bad Request: /accounts/landlord_register
+{'email': 'elijardh@gmail.com', 'password': 'ironman23', 'user_id': 45, 'user_type': 'landlord'}
+OrderedDict([('name', 'end'), ('number_of_rooms', 5), ('number_of_living_rooms', 1), ('number_of_kitchens', 1), ('number_of_toilets', 3), ('description', 'end address')])
+test G
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.imperial.techevery.ng'. You may need to add 'www.imperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /.env
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Not Found: /
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /
+Not Found: /
+Not Found: /
+Method Not Allowed: /api/add-property
+Traceback (most recent call last):
+  File "/home/techwwpp/imperial-app-backend/passenger_wsgi.py", line 1, in <module>
+    from config.wsgi import application
+  File "/home/techwwpp/imperial-app-backend/config/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/techwwpp/imperial-app-backend/accounts/models.py", line 76, in <module>
+    class Tenant(models.Model):
+  File "/home/techwwpp/imperial-app-backend/accounts/models.py", line 83, in Tenant
+    payment = models.ManyToManyField(AddPayment, related_name='AddPayment')
+NameError: name 'AddPayment' is not defined
+Traceback (most recent call last):
+  File "/home/techwwpp/imperial-app-backend/passenger_wsgi.py", line 1, in <module>
+    from config.wsgi import application
+  File "/home/techwwpp/imperial-app-backend/config/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/registry.py", line 83, in populate
+    raise RuntimeError("populate() isn't reentrant")
+RuntimeError: populate() isn't reentrant
+Traceback (most recent call last):
+  File "/home/techwwpp/imperial-app-backend/passenger_wsgi.py", line 1, in <module>
+    from config.wsgi import application
+  File "/home/techwwpp/imperial-app-backend/config/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/registry.py", line 83, in populate
+    raise RuntimeError("populate() isn't reentrant")
+RuntimeError: populate() isn't reentrant
+Traceback (most recent call last):
+  File "/home/techwwpp/imperial-app-backend/passenger_wsgi.py", line 1, in <module>
+    from config.wsgi import application
+  File "/home/techwwpp/imperial-app-backend/config/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/registry.py", line 83, in populate
+    raise RuntimeError("populate() isn't reentrant")
+RuntimeError: populate() isn't reentrant
+Traceback (most recent call last):
+  File "/home/techwwpp/imperial-app-backend/passenger_wsgi.py", line 1, in <module>
+    from config.wsgi import application
+  File "/home/techwwpp/imperial-app-backend/config/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/apps/registry.py", line 83, in populate
+    raise RuntimeError("populate() isn't reentrant")
+RuntimeError: populate() isn't reentrant
+Not Found: /favicon.ico
+Method Not Allowed: /accounts/tenant_register
+<QueryDict: {'csrfmiddlewaretoken': ['t5uAxTYyvqPtIHCahiPclKddVduc5wJu8CCE1hOkAG6DrJW7rUa3x9Qrd4LNgLve'], 'email': [''], 'password': [''], 'first_name': [''], 'last_name': [''], 'phone_number': [''], 'property': ['1'], 'flat': ['1']}>
+WWKnfimUbq
+Bad Request: /accounts/tenant_register
+{'email': 'tenantworking@mail.com', 'password': '12345678', 'first_name': 'tenant', 'last_name': 'working', 'phone_number': '+2348077456345', 'property': 36, 'flat': 31, 'payment': [{'name': 'rent', 'amount': '20000', 'type': 'one-off'}]}
+WWKnfimUbq
+Bad Request: /accounts/tenant_register
+{'email': 'tenantworking@mail.com', 'password': '12345678', 'first_name': 'tenant', 'last_name': 'working', 'phone_number': '+2348077456345', 'property': 24, 'flat': 7, 'payment': [{'name': 'rent', 'amount': '20000', 'type': 'one-off'}]}
+WWKnfimUbq
+OrderedDict([('name', 'rent'), ('amount', 20000), ('type', 'one-off')])
+tenant
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'Tenant' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 107, in post
+    'data': serializer.data,
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `TenantCreateSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Tenant` instance.
+Original exception text was: 'Tenant' object has no attribute 'email'.
+Method Not Allowed: /accounts/tenant_register
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 101, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 205, in create
+    user.set_password(validated_data['password'])
+KeyError: 'password'
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 101, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 203, in create
+    user.set_password(validated_data['password'])
+UnboundLocalError: local variable 'user' referenced before assignment
+Method Not Allowed: /accounts/tenant_register
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 101, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 204, in create
+    user.set_password(validated_data['password'])
+UnboundLocalError: local variable 'user' referenced before assignment
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 101, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 204, in create
+    user = User.objects.create(email=email, user_type='tenant')
+UnboundLocalError: local variable 'user' referenced before assignment
+Internal Server Error: /accounts/tenant_register
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 101, in post
+    user = serializer.save()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/home/techwwpp/imperial-app-backend/accounts/serializer.py", line 204, in create
+    user = User.objects.create(email=email, user_type='tenant')
+UnboundLocalError: local variable 'user' referenced before assignment
+OrderedDict([('name', 'rent due'), ('amount', 20000), ('type', 'one-off')])
+{'email': 'jsnowlope@gmail.com', 'first_name': 'tmahn', 'last_name': 'working', 'phone_number': '+2348077456351', 'property': <Property: test G>, 'flat': <Flat: end>, 'password': 'UBgnDIp3MU', 'user_id': 48, 'user_type': 'tenant'}

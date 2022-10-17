@@ -82,3 +82,42 @@ class ManagerCreateAPIView(CreateAPIView):
             error_msg = serializer.errors[error_keys[0]]
             return Response({'message': error_msg[0]}, status=400)
         return Response(serializer.errors, status=400)
+        
+        
+class TenantCreateAPIView(CreateAPIView):
+    serializer_class = TenantCreateSerializer
+    permission_classes = [AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            user = serializer.save()
+            email = data.get('email')
+            password = (user['password'])
+                
+            send_mail(
+                'Mperial Account',
+                'Here are your login details, email: {femail}, password: {fpassword}'.format(femail=email, fpassword=password),
+                'noreply@techevery.ng',
+                [email],
+                fail_silently=False,
+)
+            print(user)
+            return Response({
+                'message': "Manager Registration successful",
+                'data': serializer.data,
+                "password": raw_password,
+
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
