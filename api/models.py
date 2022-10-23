@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.conf import settings
 
 # Create your models here.
 
@@ -22,6 +24,7 @@ class Property(models.Model):
     property_name = models.CharField(max_length=100)
     address = models.TextField()
     flats = models.ManyToManyField(Flat,blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
 
 
     def __str__(self):
@@ -35,8 +38,39 @@ class AddPayment(models.Model):
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     termination_date = models.DateField(null=True, blank=True)
+    tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
+        
+
+class AddAccount(models.Model):
+    account_name = models.CharField(max_length=100)
+    bank_name = models.CharField(max_length=100)
+    account_number = models.PositiveIntegerField()
+    comment = models.TextField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.account_name)
+
+class AssignAccount(models.Model):
+    account = models.ForeignKey(AddAccount, related_name='Assignaccount', on_delete=models.CASCADE)
+    property = models.ForeignKey(Property, on_delete=models.CASCADE)
+    flats = models.ManyToManyField(Flat)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+
+
+    def __str__(self):
+        return str(self.account)
+
+
+class AddExpenses(models.Model):
+    amount = models.PositiveIntegerField()
+    description = models.TextField()
+    house = models.ForeignKey(Property, on_delete=models.CASCADE)
+    receipt = models.FileField(upload_to='documents/')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    date = models.DateField(auto_now_add=True)
 
 

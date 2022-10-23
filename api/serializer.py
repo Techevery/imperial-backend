@@ -8,7 +8,7 @@ from phonenumber_field.formfields import PhoneNumberField
 from django import forms
 from django.db import transaction
 from .models import *
-from accounts.models import Manager
+from accounts.models import Manager, Tenant
 # Register serializer
 from rest_framework.exceptions import APIException
 from drf_extra_fields.fields import Base64ImageField
@@ -78,5 +78,82 @@ class AddPaymentSerializer(serializers.ModelSerializer):
         model = AddPayment
         fields = '__all__'
         
+class TenantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tenant
+        fields = '__all__'
+        
+        
+class AddAccountserializer(serializers.ModelSerializer):
+    account_name = serializers.CharField(error_messages={'required': "account_name key is required", 'blank': "account_name key can't be blank"})
+    bank_name = serializers.CharField(error_messages={'required': "bank_name key is required", 'blank': "bank_name key can't be blank"})
+    account_number = models.PositiveIntegerField(error_messages={'required': "account_number key is required", 'blank': "account_number key can't be blank"})
+    class Meta:
+        model = AddAccount
+        fields = ['account_name', 'bank_name', 'account_number', 'comment']
+        
+        def validate(self, attrs):
+            account_name = attrs['first_name']
+            bank_name = attrs['last_name']
+            account_number = attrs['property']
+
+
+       
+            if not account_name:
+                raise APIException400({"message": "Account name is required"})
+            if not bank_name:
+                raise APIException400({"message": "Bank name is required"})
+            if not account_number:
+                raise APIException400({"message": "Account number is required"})
+            
+            return attrs
+
+    def create(self, validated_data):
+        account_name = validated_data['account_name']
+        bank_name = validated_data['bank_name']
+        account_number = validated_data['account_number']
+        comment = validated_data['comment']
+        user = self.context['request'].user
+        addAccount = AddAccount.objects.create(account_name=account_name, account_number=account_number, bank_name=bank_name, comment=comment, user=user)
+        return addAccount
+
+class AssignAccountserializer(serializers.ModelSerializer):
+    class Meta:
+        model = AssignAccount
+        fields = ['account', 'property', 'flats']
+
+    def create(self, validated_data):
+        account = validated_data['account']
+        property = validated_data['property']
+        flats_data = validated_data['flats']
+        user = self.context['request'].user
+
+
+        assignAccount = AssignAccount.objects.create(account=account, property=property, user=user)
+        for flats in flats_data:
+            assignAccount.flats.add(flats)
+
+        return assignAccount
+
+class AddExpensesserializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddExpenses
+        fields = ['amount', 'description', 'house', 'receipt']
+
+    def create(self, validated_data):
+        amount = validated_data['amount']
+        description = validated_data['description']
+        house = validated_data['house']
+        receipt = validated_data['receipt']
+        user = self.context['request'].user
+
+
+        addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house, receipt=receipt, user=user)
+        return addExpenses
+
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+
             
     

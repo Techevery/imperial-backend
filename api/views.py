@@ -18,7 +18,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView
-from accounts.models import Manager
+from accounts.models import Manager, Tenant
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -133,7 +133,7 @@ def property_detail(request, id, format=None):
 @api_view(['GET', 'PUT', 'DELETE'])
 def flat_detail(request, id, format=None):
     try:
-        flat = Flat.objects.get(test_id=id)
+        flat = Flat.objects.get(id=id)
     except Flat.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -152,3 +152,158 @@ def managers_list(request):
     if request.method == 'GET':
         serializer = ManagerSerializer(managers, many=True)
         return Response(serializer.data)
+        
+@api_view(['GET'])
+def tenant_list(request):
+    tenants = Tenant.objects.all()
+    property = Property.objects.filter(flats__id=7)
+    if request.method == 'GET':
+        serializer_2 = PropertySerializer(property, many=True)
+        serializer = TenantSerializer(tenants, many=True)
+        for i in serializer.data:
+            show = i['property']
+            manager = Manager.objects.filter(property__id=show)
+            seri = ManagerSerializer(manager, many=True)
+            for man in seri.data:
+                i.update({'manager':man})
+        
+            
+        return Response({
+            'data': serializer.data,
+            
+            
+        })
+        
+@api_view(['GET'])
+def tenants_list(request):
+    tenants = Tenant.objects.all()
+    if request.method == 'GET':
+        serializer = TenantSerializer(tenants, many=True)
+        for i in serializer.data:
+            show = i['property']
+            property = Property.objects.filter(id=show)
+            serializer_2 = PropertySerializer(property, many=True)
+            for seri in serializer_2.data:
+                i.update({'property_details':seri})
+            
+            
+        return Response(serializer.data)
+        
+        
+class AddAccountCreateApi(CreateAPIView):
+    serializer_class = AddAccountserializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save(user=request.user)
+
+            return Response({
+                'message': "Account added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+
+class AssignAccountCreateApi(CreateAPIView):
+    serializer_class = AssignAccountserializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Account assigned successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+
+class AddExpensesCreateApi(CreateAPIView):
+    serializer_class = AddExpensesserializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Expenses added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+
+class AccountView(APIView):
+    def get(self, request):
+        account = AddAccount.objects.filter(user=request.user)
+        if request.method == 'GET':
+            serializer = AddAccountserializer(account, many=True)
+            return Response(serializer.data)
+
+class ExpensesView(APIView):
+    def get(self, request):
+        expenses = AddExpenses.objects.filter(user=request.user)
+        if request.method == 'GET':
+            serializer = AddExpensesserializer(expenses, many=True)
+            total = 0
+            for i in serializer.data:
+                total = total + i['amount']
+
+            return Response({'data':serializer.data,
+                             'total': total
+                             })
+
+class ManagerProperty(APIView):
+    def get(self, request):
+        property = Property.objects.filter(user=request.user)
+        if request.method == 'GET':
+            serializer = PropertySerializer(property, many=True)
+            for i in serializer.data:
+                data= i['id']
+                expenses = AddExpenses.objects.filter(house=data)
+                tenant = Tenant.objects.filter(property=data)
+                serializer_2 = AddExpensesserializer(expenses, many=True)
+                total = 0
+                for s in serializer_2.data:
+                    total = total + s['amount']
+                    i.update({'expenses':total})
+            print(total)
+
+
+
+        return Response({
+            'data':serializer.data,
+        })
+        
