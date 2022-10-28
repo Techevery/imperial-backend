@@ -25,7 +25,7 @@ urlpatterns = [
     path('account-list', AccountView.as_view()),
     path('expenses', ExpensesView.as_view()),
     path('manager-property', ManagerProperty.as_view()),
-    path('add-document', AddDocumentCreateApi.as_view()),
+    path('tenant/add-document', AddDocumentCreateApi.as_view()),
     path('tenant-document', TenantDocument.as_view()),
     path('tenant-payment', TenantPaymentUpdate.as_view()),
     

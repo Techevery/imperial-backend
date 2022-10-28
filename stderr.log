@@ -22768,3 +22768,814 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'id' into field. Choic
 Bad Request: /accounts/update-tenant
 Bad Request: /accounts/update-tenant
 Bad Request: /accounts/update-tenant
+Unauthorized: /api/user-details
+Method Not Allowed: /api/token/refresh
+Unauthorized: /api/user-details
+Unauthorized: /api/user-details
+Method Not Allowed: /api/user-details
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    serializer['data']='test'
+TypeError: 'UserSerializer' object does not support item assignment
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    serializer['data']='test'
+TypeError: 'UserSerializer' object does not support item assignment
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 147, in get
+    serializer['data']='test'
+TypeError: 'UserSerializer' object does not support item assignment
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 148, in get
+    i.update({'data':'test'})
+AttributeError: 'str' object has no attribute 'update'
+Internal Server Error: /api/user-details
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 148, in get
+    i.update({'data':'test'})
+AttributeError: 'str' object has no attribute 'update'
+[ERROR] [UID:1018][2045204] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 53, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    if not is_valid_path(request.path_info, urlconf):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 155, in is_valid_path
+    return resolve(path, urlconf)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 131, in __call__
+    response = self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+[ERROR] [UID:1018][2045204] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 53, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    if not is_valid_path(request.path_info, urlconf):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 155, in is_valid_path
+    return resolve(path, urlconf)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 131, in __call__
+    response = self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+[ERROR] [UID:1018][2045204] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 53, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    if not is_valid_path(request.path_info, urlconf):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 155, in is_valid_path
+    return resolve(path, urlconf)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = response or self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 131, in __call__
+    response = self.get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 66, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 396, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 381, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/debug.py", line 99, in get_caller
+    resolver_match = resolve(request.path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/config/urls.py", line 22, in <module>
+    path('api/', include('api.urls')),
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/urls/conf.py", line 38, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/opt/alt/python38/lib64/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/techwwpp/imperial-app-backend/api/urls.py", line 6, in <module>
+    from . import views
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 150
+    'test': 'data'
+    ^
+SyntaxError: invalid syntax
+Not Found: /api/manager-property
+Method Not Allowed: /api/token/
+Unauthorized: /api/token/
+Not Found: /api/manager-property
+Not Found: /api/manager-property
+Not Found: /api/manager-property
+Unauthorized: /api/manager-property
+Unauthorized: /api/manager-property
+Not Found: /
+Unauthorized: /api/add-document
+Not Found: /favicon.ico

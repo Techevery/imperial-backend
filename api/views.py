@@ -144,7 +144,10 @@ def flat_detail(request, id, format=None):
 class CurrentUserView(APIView):
     def get(self, request):
         serializer = UserSerializer(request.user)
-        return Response(serializer.data)
+        serializer.data["data"] = "test"
+        return Response(
+             serializer.data
+        )
 
 @api_view(['GET'])
 def managers_list(request):
@@ -334,9 +337,7 @@ class ManagerProperty(APIView):
                 'data':serializer.data,
             })
         else:
-            return Response({
-                'result': 'no property' 
-                })
+            return Response(status=404)
                 
 class TenantDocument(APIView):
     def get(self, request):
