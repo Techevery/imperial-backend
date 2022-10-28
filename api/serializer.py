@@ -90,7 +90,7 @@ class AddAccountserializer(serializers.ModelSerializer):
     account_number = models.PositiveIntegerField(error_messages={'required': "account_number key is required", 'blank': "account_number key can't be blank"})
     class Meta:
         model = AddAccount
-        fields = ['account_name', 'bank_name', 'account_number', 'comment']
+        fields = ['account_name', 'bank_name', 'account_number', 'comment', 'id']
         
         def validate(self, attrs):
             account_name = attrs['first_name']
@@ -155,5 +155,23 @@ class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
 
+class AddDocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddDocument
+        fields = ['name', 'document', 'date']
+        
+    def create(self, validated_data):
+        name = validated_data['name']
+        document = validated_data['document']
+        user = self.context['request'].user
+        
+        addDocument = AddDocument.objects.create(name=name, document=document, user=user)
+        
+        return addDocument
+        
+        
+    
+
+        
             
     

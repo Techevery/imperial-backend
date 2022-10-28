@@ -66,7 +66,6 @@ class Manager(models.Model):
     annual_salary = models.BigIntegerField()
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     property = models.ManyToManyField(Property, blank=True)
-
     class Meta():
         verbose_name_plural = 'Manager'
 
@@ -75,13 +74,21 @@ class Manager(models.Model):
 
 class Tenant(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    photo = models.ImageField(blank=True, null=True, upload_to='uploads/tenant-pictures')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200, null=True, blank=True)
     phone_number = PhoneNumberField(unique=True, null=False, blank=False)
     flat = models.ForeignKey(Flat, related_name='Flat', on_delete=models.CASCADE)
     property = models.ForeignKey(Property, related_name='House', on_delete=models.CASCADE)
     payment = models.ManyToManyField(AddPayment, related_name='AddPayment')
-
+    annual_salary = models.BigIntegerField(null=True, blank=True)
+    next_of_kin = models.CharField(max_length=100, null=True, blank=True)
+    state_of_origin = models.CharField(max_length=100, null=True, blank=True)
+    guarantor = models.CharField(max_length=100, null=True, blank=True)
+    former_address = models.TextField(null=True, blank=True)
+    place_of_work = models.CharField(max_length=100, null=True, blank=True)
+    position_at_work = models.CharField(max_length=100, null=True, blank=True)
+    purpose_of_rent = models.TextField(null=True, blank=True)
 
 
     class Meta():

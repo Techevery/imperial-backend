@@ -72,5 +72,19 @@ class AddExpenses(models.Model):
     receipt = models.FileField(upload_to='documents/')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.house)
+        
 
+class AddDocument(models.Model):
+    name = models.CharField(max_length=100)
+    document = models.FileField(upload_to='documents/tenant-documents')
+    date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.name)
+    
+    
 

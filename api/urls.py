@@ -4,8 +4,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty
-
+from .views import MyTokenObtainPairView, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, TenantDocument, TenantPaymentUpdate
 
 urlpatterns = [
 
@@ -25,6 +24,10 @@ urlpatterns = [
     path('add-expenses', AddExpensesCreateApi.as_view()),
     path('account-list', AccountView.as_view()),
     path('expenses', ExpensesView.as_view()),
-    path('manager-property', ManagerProperty.as_view())
+    path('manager-property', ManagerProperty.as_view()),
+    path('add-document', AddDocumentCreateApi.as_view()),
+    path('tenant-document', TenantDocument.as_view()),
+    path('tenant-payment', TenantPaymentUpdate.as_view()),
+    
 
 ]

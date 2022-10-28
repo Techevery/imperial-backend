@@ -264,6 +264,31 @@ class AddExpensesCreateApi(CreateAPIView):
             error_msg = serializer.errors[error_keys[0]]
             return Response({'message': error_msg[0]}, status=400)
         return Response(serializer.errors, status=400)
+        
+class AddDocumentCreateApi(CreateAPIView):
+    serializer_class = AddDocumentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Document added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
 
 class AccountView(APIView):
     def get(self, request):
@@ -288,22 +313,55 @@ class ExpensesView(APIView):
 class ManagerProperty(APIView):
     def get(self, request):
         property = Property.objects.filter(user=request.user)
+        
+        if property:
+            if request.method == 'GET':
+                serializer = PropertySerializer(property, many=True)
+                for i in serializer.data:
+                    data= i['id']
+                    expenses = AddExpenses.objects.filter(house=data)
+                    tenant = Tenant.objects.filter(property=data)
+                    serializer_2 = AddExpensesserializer(expenses, many=True)
+                    total = 0
+                    for s in serializer_2.data:
+                        total = total + s['amount']
+                        i.update({'expenses':total})
+                print(total)
+    
+    
+    
+            return Response({
+                'data':serializer.data,
+            })
+        else:
+            return Response({
+                'result': 'no property' 
+                })
+                
+class TenantDocument(APIView):
+    def get(self, request):
+        document = AddDocument.objects.filter(user=request.user)
+        
         if request.method == 'GET':
-            serializer = PropertySerializer(property, many=True)
-            for i in serializer.data:
-                data= i['id']
-                expenses = AddExpenses.objects.filter(house=data)
-                tenant = Tenant.objects.filter(property=data)
-                serializer_2 = AddExpensesserializer(expenses, many=True)
-                total = 0
-                for s in serializer_2.data:
-                    total = total + s['amount']
-                    i.update({'expenses':total})
-            print(total)
+            serializer = AddDocumentSerializer(document, many=True)
+            
+        return Response(serializer.data)
+        
+class TenantPaymentUpdate(APIView):
+    def get(self, request):
+        try:
+            tenant = Tenant.objects.get(user=46)
+        except Tenant.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        if request.method == 'GET':
+            serializer = TenantSerializer(tenant)
+            seri = []
+            for i in serializer.data['payment']:
+                payment = AddPayment.objects.get(id=i)
+                serial = AddPaymentSerializer(payment)
+                seri.append(serial.data)
 
-
-
-        return Response({
-            'data':serializer.data,
-        })
+        return Response(seri)
+        
+        
         

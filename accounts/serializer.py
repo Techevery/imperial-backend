@@ -216,3 +216,24 @@ class TenantCreateSerializer(serializers.ModelSerializer):
 
         return validated_data
         
+        
+class TenantChangeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tenant
+        fields = ['photo', 'first_name', 'last_name', 'phone_number', 'next_of_kin', 'state_of_origin', 'guarantor', 'position_at_work', 'annual_salary', 'former_address', 'purpose_of_rent']
+
+    def update(self, instance, validated_data):
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.phone_number = validated_data.get('phone_number', instance.phone_number)
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.next_of_kin = validated_data.get('next_of_kin', instance.next_of_kin)
+        instance.state_of_origin = validated_data.get('state_of_origin', instance.state_of_origin)
+        instance.guarantor = validated_data.get('guarantor', instance.guarantor)
+        instance.position_at_work = validated_data.get('position_at_work', instance.position_at_work)
+        instance.annual_salary = validated_data.get('annual_salary', instance.annual_salary)
+        instance.former_address = validated_data.get('former_address', instance.former_address)
+        instance.purpose_of_rent = validated_data.get('purpose_of_rent', instance.purpose_of_rent)
+
+        instance.save()
+        return instance
