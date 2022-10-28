@@ -26,6 +26,7 @@ class CustomUserAdmin(UserAdmin):
                     'groups',
                     'user_permissions',
                     'password',
+                    'user_type',
                 )
             },
         ),

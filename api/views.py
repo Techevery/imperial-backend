@@ -23,16 +23,62 @@ from accounts.models import Manager, Tenant
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
-        token = super().get_token(user)
+        if user.user_type == 'landlord':
+            token = super().get_token(user)
 
-        # Add custom claims
-        token['username'] = user.username
-        # ...
+            # Add custom claims
+            token['username'] = user.username
+            # ...
 
-        return token
+            return token
+
+
+
+
+
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+    
+class MyTokenObtainPairSerializer2(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        if user.user_type == 'manager':
+            token = super().get_token(user)
+
+            # Add custom claims
+            token['username'] = user.username
+            # ...
+
+            return token
+
+
+
+
+
+
+class MyTokenObtainPairView2(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer2
+    
+class MyTokenObtainPairSerializer3(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        if user.user_type == 'tenant':
+            token = super().get_token(user)
+
+            # Add custom claims
+            token['username'] = user.username
+            # ...
+
+            return token
+
+
+
+
+
+
+class MyTokenObtainPairView3(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer3
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

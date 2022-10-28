@@ -23579,3 +23579,1120 @@ Unauthorized: /api/manager-property
 Not Found: /
 Unauthorized: /api/add-document
 Not Found: /favicon.ico
+Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/http/request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.mperial.techevery.ng'. You may need to add 'www.mperial.techevery.ng' to ALLOWED_HOSTS.
+Bad Request: /
+Internal Server Error: /api/manager-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 318, in get
+    property = Property.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2aab9b2a0f40>.
+Unauthorized: /api/tenant/add-document
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Method Not Allowed: /accounts/tenant_register
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 344, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2aab9b643ca0>.
+Not Found: /api/tenant/tenant-document
+Not Found: /api/%20tenant-payment
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 344, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2aab9b2a0fa0>.
+Method Not Allowed: /api/token/
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 350, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2aab9b322ca0>.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 350, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2aab9b2a0f70>.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Not Found: /account/update-tenant
+Unauthorized: /accounts/update-tenant
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Unauthorized: /api/tenant-document
+Not Found: /api/tenant-documents
+Unauthorized: /api/tenant-document
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][230984] packetLen < 0
+Method Not Allowed: /api/token/
+Method Not Allowed: /api/token/
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][231878] packetLen < 0
+Not Found: /accounts/update-tenant/46
+[UID:1018][231878] packetLen < 0
+Method Not Allowed: /api/token/
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 350, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2ab50186afa0>.
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][267519] packetLen < 0
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][270393] packetLen < 0
+Not Found: /tenant-document
+Method Not Allowed: /api/tenant-document
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 350, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2ab501b07b50>.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/?email=toluiwal@gmail.com&password=tolu2017 (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/manager-property
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 324, in get
+    property = Property.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2ab501b91af0>.
+Internal Server Error: /api/tenant-document
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/api/views.py", line 350, in get
+    document = AddDocument.objects.filter(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x2ab501b7aac0>.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][276932] packetLen < 0
+Unauthorized: /accounts/update-tenant
+Unauthorized: /api/token/refresh
+Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Method Not Allowed: /api/token/
+Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to mperial.techevery.ng/api/token/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Bad Request: /accounts/landlord_register
+Internal Server Error: /api/token/
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Bad Request: /accounts/landlord_register
+Unauthorized: /api/token/
+Not Found: /api/token/
+Method Not Allowed: /api/login/landlord
+Internal Server Error: /api/login/landlord
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Method Not Allowed: /api/login/tenant
+Internal Server Error: /api/login/tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework_simplejwt/serializers.py", line 73, in validate
+    data["access"] = str(refresh.access_token)
+AttributeError: 'NoneType' object has no attribute 'access_token'
+Internal Server Error: /accounts/update-tenant
+Traceback (most recent call last):
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/techwwpp/imperial-app-backend/accounts/views.py", line 132, in put
+    instance = self.model.objects.get(user=request.user)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/techwwpp/virtualenv/imperial-app-backend/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.DoesNotExist(
+accounts.models.Tenant.DoesNotExist: Tenant matching query does not exist.
+[UID:1018][347370] packetLen < 0

@@ -4,11 +4,13 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, TenantDocument, TenantPaymentUpdate
+from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, TenantDocument, TenantPaymentUpdate
 
 urlpatterns = [
 
-    path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/landlord', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/manager', MyTokenObtainPairView2.as_view(), name='token_obtain_pair2'),
+    path('login/tenant', MyTokenObtainPairView3.as_view(), name='token_obtain_pair3'),
     path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('display', views.show, name='show'),
     path('add', views.add_property),
