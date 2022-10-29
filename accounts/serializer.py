@@ -81,6 +81,10 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
             raise APIException400({"message": "email is required"})
         if User.objects.filter(email=email).exists():
             raise APIException400({"message": "This email already exists. Please login"})
+        for prop in property:
+            if Manager.objects.filter(property=prop).exists():
+                a =Property.objects.get(id=prop.id)
+                raise APIException400({"message": "property " + a.property_name + " is already being managed"})
         if not first_name:
             raise APIException400({"message": "first_name is required"})
         if not last_name:
@@ -112,6 +116,9 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
             
             for prop in property:
                 manager_obj.property.add(prop)
+                house = Property.objects.get(id=prop.id)
+                house.user = user
+                house.save()
         
         return validated_data
 
@@ -223,6 +230,7 @@ class TenantChangeSerializer(serializers.ModelSerializer):
         fields = ['photo', 'first_name', 'last_name', 'phone_number', 'next_of_kin', 'state_of_origin', 'guarantor', 'position_at_work', 'annual_salary', 'former_address', 'purpose_of_rent']
 
     def update(self, instance, validated_data):
+        instance.photo = validated_data.get('photo', instance.photo)
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
         instance.phone_number = validated_data.get('phone_number', instance.phone_number)

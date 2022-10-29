@@ -151,8 +151,9 @@ class AddExpensesserializer(serializers.ModelSerializer):
         addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house, receipt=receipt, user=user)
         return addExpenses
 
-class AccountSerializer(serializers.ModelSerializer):
+class AssignAccountSerializer(serializers.ModelSerializer):
     class Meta:
+        model = AssignAccount
         fields = '__all__'
 
 class AddDocumentSerializer(serializers.ModelSerializer):

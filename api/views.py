@@ -397,7 +397,7 @@ class TenantDocument(APIView):
 class TenantPaymentUpdate(APIView):
     def get(self, request):
         try:
-            tenant = Tenant.objects.get(user=46)
+            tenant = Tenant.objects.get(user=request.user)
         except Tenant.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
         if request.method == 'GET':
@@ -409,6 +409,15 @@ class TenantPaymentUpdate(APIView):
                 seri.append(serial.data)
 
         return Response(seri)
+        
+class TenantDetails(APIView):
+    def get(self, request):
+        tenant = Tenant.objects.get(user=request.user.id)
+        serializer_2 = TenantSerializer(tenant)
+        return Response(
+             serializer_2.data
+        )
+    
         
         
         
