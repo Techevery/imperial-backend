@@ -3,6 +3,10 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 
 # Create your models here.
+payment_type = (
+    ('online payment', 'online_payment'),
+    ('transfer', 'transfer')
+)
 
 
 
@@ -85,6 +89,18 @@ class AddDocument(models.Model):
     
     def __str__(self):
         return str(self.name)
+        
+class MakePayment(models.Model):
+    description = models.TextField()
+    amount = models.PositiveIntegerField()
+    type = models.CharField(max_length=100, choices=payment_type)
+    ref_code = models.CharField(max_length=100, null=True, blank=True, unique=True)
+    receipt = models.FileField(upload_to='documents/tenant-payments', null=True, blank=True)
+    tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.description
     
     
 

@@ -111,7 +111,7 @@ class TenantCreateAPIView(CreateAPIView):
 )
             print(user)
             return Response({
-                'message': "Manager Registration successful",
+                'message': "Tenant Registration successful",
                 'data': serializer.data,
                 "password": raw_password,
 

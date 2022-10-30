@@ -409,15 +409,56 @@ class TenantPaymentUpdate(APIView):
                 seri.append(serial.data)
 
         return Response(seri)
-        
+
 class TenantDetails(APIView):
+    permission_classes([IsAuthenticated])
     def get(self, request):
+        print(request.user)
+
         tenant = Tenant.objects.get(user=request.user.id)
+        prop = tenant.flat
+        assigned_data = AssignAccount.objects.filter(flats=prop)
+        item = []
+        for ass in assigned_data:
+            account_data = AddAccount.objects.get(id=ass.account.id)
+            serializer_4 = AccountSerializer(account_data)
+            item.append(serializer_4.data)
+
+        serializers_3 = AssignSerializer(assigned_data, many=True)
+
+        account_data = AccountSerializer()
+
         serializer_2 = TenantSerializer(tenant)
         return Response(
-             serializer_2.data
-        )
+            {'data': serializer_2.data,
+             'assigned_account': item
+
+             })
     
+class MakePayment(CreateAPIView):
+    serializer_class = MakePaymentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            payment = serializer.save()
+
+            return Response({
+                'message': "Payment added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
         
         
         

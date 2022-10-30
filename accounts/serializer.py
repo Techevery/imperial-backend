@@ -183,11 +183,14 @@ class TenantCreateSerializer(serializers.ModelSerializer):
         first_name = attrs['first_name']
         last_name = attrs['last_name']
         property = attrs['property']
+        flat = attrs['flat']
 
         if not email:
             raise APIException400({"message": "email is required"})
         if User.objects.filter(email=email).exists():
             raise APIException400({"message": "This email already exists. Please login"})
+        if Tenant.objects.filter(flat=flat).exists():
+            raise  APIException400({"message": "Tenant currently occupying this flat"})
         if not first_name:
             raise APIException400({"message": "first_name is required"})
         if not last_name:

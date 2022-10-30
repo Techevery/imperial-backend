@@ -170,8 +170,38 @@ class AddDocumentSerializer(serializers.ModelSerializer):
         
         return addDocument
         
+class MakePaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MakePayment
+        fields = ['id', 'description', 'amount', 'type', 'ref_code']
         
-    
+        
+    def validate(self, attrs):
+        description = attrs['description']
+        amount = attrs['amount']
+        type = attrs['type']
+        ref_code = attrs['ref_code']
+        receipt = attrs['receipt']
+        
+        if not amount:
+            raise APIException400({"message": "please enter a valid amount"})
+        if type == 'transfer':
+            if not receipt:
+                raise APIException400({"message": "please provide receipt for payment by transfer"})
+                
+        if type == 'online payment':
+            if not ref_code:
+                raise APIException400({"message": "please generate a ref code"})
+                
+    def create(self, validated_data):
+        description = validated_data['description']
+        amount = validated_data['amount']
+        type = validated_data['type']
+        ref_code = validated_data['ref_code']
+        user = self.context['request'].user
+        
+        pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, status=False, user=user)
+        return pay
 
         
             
