@@ -1,6 +1,6 @@
 from django.urls import path
 from .api import RegisterApi
-from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView
+from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView, UpdateManagerView
 urlpatterns = [
       path('api/register', RegisterApi.as_view()),
       path('signup', SignUp.as_view()),
@@ -8,4 +8,5 @@ urlpatterns = [
       path('manager_register', ManagerCreateAPIView.as_view(), name='manager_register'),
       path('tenant_register', TenantCreateAPIView.as_view(), name='manager_register'),
       path('update-tenant', UpdateTenantView.as_view()),
+      path('update-manager', UpdateManagerView.as_view()),
 ]

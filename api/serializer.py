@@ -156,6 +156,7 @@ class AssignAccountSerializer(serializers.ModelSerializer):
         model = AssignAccount
         fields = '__all__'
 
+#Tenant
 class AddDocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddDocument
@@ -173,7 +174,7 @@ class AddDocumentSerializer(serializers.ModelSerializer):
 class MakePaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = MakePayment
-        fields = ['id', 'description', 'amount', 'type', 'ref_code']
+        fields = '__all__'
         
         
     def validate(self, attrs):
@@ -193,15 +194,65 @@ class MakePaymentSerializer(serializers.ModelSerializer):
             if not ref_code:
                 raise APIException400({"message": "please generate a ref code"})
                 
+        return attrs
+                
     def create(self, validated_data):
         description = validated_data['description']
         amount = validated_data['amount']
         type = validated_data['type']
         ref_code = validated_data['ref_code']
+        receipt = validated_data['receipt']
+        tenant = self.context['request'].user
+        
+        pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, tenant=tenant)
+        return pay
+        
+class LandlordDocumentSerializer(serializers.ModelSerializer):
+    test = User.objects.get(id=66)
+    class Meta:
+        model = LandlordDocument
+        fields = ['name', 'document', 'date', 'manager']
+        
+    def create(self, validated_data):
+        name = validated_data['name']
+        document = validated_data['document']
+        #house_id = validated_data['house_id']
+        manager = validated_data['manager']
         user = self.context['request'].user
         
-        pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, status=False, user=user)
-        return pay
+        addDocument = LandlordDocument.objects.create(name=name, document=document, manager=manager, user=user)
+        
+        return addDocument
+    
+class ManagerDocumentSerializer(serializers.ModelSerializer):
+    test = User.objects.get(id=66)
+    class Meta:
+        model = ManagerDocument
+        fields = ['name', 'document', 'date']
+        
+    def create(self, validated_data):
+        name = validated_data['name']
+        document = validated_data['document']
+        user = self.context['request'].user
+        
+        addDocument = ManagerDocument.objects.create(name=name, document=document, user=user)
+        
+        return addDocument
+        
+class LandlordTenantDocSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LandlordTenantDoc
+        fields = ['name', 'document', 'date','tenant']
+        
+    def create(self, validated_data):
+        name = validated_data['name']
+        document = validated_data['document']
+        tenant = validated_data['tenant']
+        user = self.context['request'].user
+        
+        addDocument = LandlordTenantDoc.objects.create(name=name, document=document, tenant=tenant, user=user)
+        
+        return addDocument
 
         
             

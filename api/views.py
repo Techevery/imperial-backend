@@ -10,7 +10,7 @@ from django.http.response import HttpResponse
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from . import forms
-from .models import Flat, Property
+from .models import Flat, Property, MakePayment
 from .models import Property
 from django.shortcuts import get_object_or_404, redirect, render
 from .serializer import *
@@ -19,6 +19,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView
 from accounts.models import Manager, Tenant
+from datetime import datetime, timedelta, time, date
+from django.utils import timezone
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -314,6 +316,7 @@ class AddExpensesCreateApi(CreateAPIView):
             return Response({'message': error_msg[0]}, status=400)
         return Response(serializer.errors, status=400)
         
+#Tenant
 class AddDocumentCreateApi(CreateAPIView):
     serializer_class = AddDocumentSerializer
     permission_classes = [IsAuthenticated]
@@ -361,7 +364,12 @@ class ExpensesView(APIView):
 
 class ManagerProperty(APIView):
     def get(self, request):
-        property = Property.objects.filter(user=request.user)
+        user_info = request.user
+        if user_info.user_type == 'manager':
+            property = Property.objects.filter(user=request.user)
+        elif user_info.user_type == 'landlord':
+            property = Property.objects.all()
+            
         
         if property:
             if request.method == 'GET':
@@ -387,7 +395,7 @@ class ManagerProperty(APIView):
                 
 class TenantDocument(APIView):
     def get(self, request):
-        document = AddDocument.objects.filter(user=request.user)
+        document = AddDocument.objects.filter(user=request.user.id)
         
         if request.method == 'GET':
             serializer = AddDocumentSerializer(document, many=True)
@@ -421,12 +429,12 @@ class TenantDetails(APIView):
         item = []
         for ass in assigned_data:
             account_data = AddAccount.objects.get(id=ass.account.id)
-            serializer_4 = AccountSerializer(account_data)
+            serializer_4 = AddAccountserializer(account_data)
             item.append(serializer_4.data)
 
-        serializers_3 = AssignSerializer(assigned_data, many=True)
+        serializers_3 = AssignAccountSerializer(assigned_data, many=True)
 
-        account_data = AccountSerializer()
+        #account_data = AccountSerializer()
 
         serializer_2 = TenantSerializer(tenant)
         return Response(
@@ -448,7 +456,7 @@ class MakePayment(CreateAPIView):
         serializer = self.get_serializer(data=data,context={'request':request})
         if serializer.is_valid():
             # logger.info('serializer is valid')
-            payment = serializer.save()
+            account = serializer.save()
 
             return Response({
                 'message': "Payment added successfully",
@@ -460,5 +468,186 @@ class MakePayment(CreateAPIView):
             return Response({'message': error_msg[0]}, status=400)
         return Response(serializer.errors, status=400)
         
+class LandlordDocumentCreateApi(CreateAPIView):
+    serializer_class = LandlordDocumentSerializer
+    #permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Document added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
         
+class ManagerFiles(APIView):
+    def get(self, request):
+        document = LandlordDocument.objects.filter(manager=request.user.id)
+        if request.method == 'GET':
+            serializer = LandlordDocumentSerializer(document, many=True)
+            return Response(serializer.data)
         
+class ManagerDocumentCreateApi(CreateAPIView):
+    serializer_class = ManagerDocumentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Document added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+
+class LandlordTenantDocCreateApi(CreateAPIView):
+    serializer_class = LandlordTenantDocSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Document added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+        
+class TenantMyFilesCreateApi(CreateAPIView):
+    serializer_class = AddDocumentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        # import logging
+        data = request.data
+        # logger = logging.getLogger('accounts')
+        # logger.info('inside post')
+        # logger.info(data)
+        serializer = self.get_serializer(data=data,context={'request':request})
+        if serializer.is_valid():
+            # logger.info('serializer is valid')
+            account = serializer.save()
+
+            return Response({
+                'message': "Document added successfully",
+                'data': serializer.data,
+            }, status=200, )
+        error_keys = list(serializer.errors.keys())
+        if error_keys:
+            error_msg = serializer.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serializer.errors, status=400)
+        
+class ManagerDocumentView(APIView):
+    def get(self, request):
+        document = ManagerDocument.objects.filter(user=request.user.id)
+        if request.method == 'GET':
+            serializer = ManagerDocumentSerializer(document, many=True)
+            return Response(serializer.data)
+class TenantFiles(APIView):
+    def get(self, request):
+        try:
+            document = LandlordTenantDoc.objects.filter(tenant=request.user.id)
+        except LandlordTenantDoc.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        
+        if request.method == 'GET':
+            serializer = LandlordTenantDocSerializer(document, many=True)
+            return Response(serializer.data)
+
+class LandlordTenantFiles(APIView):
+    def get(self, request, id):
+        try:
+            document = LandlordTenantDoc.objects.filter(tenant=id)
+        except LandlordTenantDoc.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        
+        if request.method == 'GET':
+            serializer = LandlordTenantDocSerializer(document, many=True)
+            return Response(serializer.data)
+            
+class LandlordTenantMyFiles(APIView):
+    def get(self, request, id):
+        document = AddDocument.objects.filter(user=id)
+        
+        if request.method == 'GET':
+            serializer = AddDocumentSerializer(document, many=True)
+            
+        return Response(serializer.data)
+            
+class ViewPayment(APIView):
+    def get(self, request):
+        #try:
+        pay = MakePayment.objects.all()
+        #except MakePayment.DoesNotExist:
+        #return Response(status=status.HTTP_404_NOT_FOUND)
+
+        
+        if request.method == 'GET':
+            serializer = MakePaymentSerializer(pay, many=True)
+            return Response(serializer.data)
+        
+            
+class PageView(APIView):
+    #serializer_class = AddPaymentSerializer
+    def get(self, request):
+        #tenant = Tenant.objects.get(user=request.user.id)
+        count_down = AddPayment.objects.filter(tenant=request.user.id, name='rent').last()
+        serializer_data = AddPaymentSerializer(count_down)
+        now = datetime.now()
+        #start = date(value(now))
+        #days = now + count_down.end_date
+        #ten_minutes_ago = now + timedelta(minutes=-1)
+        #end = date(int(count_down.end_date.strftime("%Y%m%d")))
+        #day = end-now
+        #days = day.days()
+        end = now+timedelta(days=2)
+        #test=datetime.datetime.strptime(now,'%m/%d/%Y').date()
+        final=str(end-now)
+        
+        return Response({
+             "payment-data": serializer_data.data,
+             "days":final,
+             "now":now,
+             "now2": serializer_data.data["end_date"],
+             "split":str(serializer_data.data["end_date"])-str(serializer_data.data["end_date"])
+             })

@@ -18,6 +18,7 @@ class Flat(models.Model):
     number_of_toilets = models.PositiveIntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     test_id = models.IntegerField(null=True, blank=True)
+    vacant = models.BooleanField(null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
@@ -97,10 +98,39 @@ class MakePayment(models.Model):
     ref_code = models.CharField(max_length=100, null=True, blank=True, unique=True)
     receipt = models.FileField(upload_to='documents/tenant-payments', null=True, blank=True)
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
-    status = models.BooleanField(default=False)
+    status = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.description
     
+class LandlordDocument(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    document = models.FileField(upload_to='documents/landlord-documents')
+    date = models.DateField(auto_now_add=True)
+    house_id = models.ForeignKey(Property, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    manager = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='manager_docs')
     
+    def __str__(self):
+        return str(self.name)
+        
+class ManagerDocument(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    document = models.FileField(upload_to='documents/manager-documents')
+    date = models.DateField(auto_now_add=True)
+    house_id = models.ForeignKey(Property, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.name)
+    
+class LandlordTenantDoc(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    document = models.FileField(upload_to='documents/landlord-documents')
+    date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='tenant_docs')
+    
+    def __str__(self):
+        return str(self.name)
 

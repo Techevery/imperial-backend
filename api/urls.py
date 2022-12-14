@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, TenantDocument, TenantPaymentUpdate, TenantDetails, MakePayment
+from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles, LandlordTenantFiles,LandlordTenantMyFiles, TenantPaymentUpdate, TenantDetails, MakePayment, ViewPayment, PageView
 
 urlpatterns = [
 
@@ -28,9 +28,19 @@ urlpatterns = [
     path('expenses', ExpensesView.as_view()),
     path('manager-property', ManagerProperty.as_view()),
     path('tenant/add-document', AddDocumentCreateApi.as_view()),
-    path('tenant-document', TenantDocument.as_view()),
+    path('tenant/my-files', TenantDocument.as_view()),
     path('tenant-payment', TenantPaymentUpdate.as_view()),
     path('tenant/details', TenantDetails.as_view()),
     path('make-payment', MakePayment.as_view()),
-
+    path('landlord/add-manager-doc', LandlordDocumentCreateApi.as_view()),
+    path('manager-files', ManagerFiles.as_view()),
+    path('manager/add-document', ManagerDocumentCreateApi.as_view()),
+    path('landlord/add-tenant-doc', LandlordTenantDocCreateApi.as_view()),
+    path('manager/my-files', ManagerDocumentView.as_view()),
+    path('tenant/add-document', TenantMyFilesCreateApi.as_view()),
+    path('tenant-files', TenantFiles.as_view()),
+    path('landlord/tenant-files/<int:id>', LandlordTenantMyFiles.as_view()),
+    path('view-payment', ViewPayment.as_view()),
+    path('page', PageView.as_view())
+    
 ]

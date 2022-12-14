@@ -223,6 +223,9 @@ class TenantCreateSerializer(serializers.ModelSerializer):
             print(payment_data)
             payment = AddPayment.objects.create(**payment_data)
             tenant_obj.payment.add(payment)
+        flat_update = Flat.objects.get(id=flat)
+        flat_update.vacant = True
+        flat_update.update()
 
         return validated_data
         
@@ -237,7 +240,6 @@ class TenantChangeSerializer(serializers.ModelSerializer):
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
         instance.phone_number = validated_data.get('phone_number', instance.phone_number)
-        instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.next_of_kin = validated_data.get('next_of_kin', instance.next_of_kin)
         instance.state_of_origin = validated_data.get('state_of_origin', instance.state_of_origin)
         instance.guarantor = validated_data.get('guarantor', instance.guarantor)
@@ -245,6 +247,19 @@ class TenantChangeSerializer(serializers.ModelSerializer):
         instance.annual_salary = validated_data.get('annual_salary', instance.annual_salary)
         instance.former_address = validated_data.get('former_address', instance.former_address)
         instance.purpose_of_rent = validated_data.get('purpose_of_rent', instance.purpose_of_rent)
+
+        instance.save()
+        return instance
+        
+class ManagerChangeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manager
+        fields = ['first_name', 'last_name', 'phone_number']
+
+    def update(self, instance, validated_data):
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.phone_number = validated_data.get('phone_number', instance.phone_number)
 
         instance.save()
         return instance
