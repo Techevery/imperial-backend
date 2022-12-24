@@ -8,7 +8,7 @@ from phonenumber_field.formfields import PhoneNumberField
 from django import forms
 from django.db import transaction
 from .models import *
-from accounts.models import Manager, Tenant
+from accounts.models import Manager, Tenant, LandLord
 # Register serializer
 from rest_framework.exceptions import APIException
 from drf_extra_fields.fields import Base64ImageField
@@ -70,6 +70,11 @@ class UserSerializer(serializers.ModelSerializer):
 class ManagerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Manager
+        fields = '__all__'
+
+class LandlordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LandLord
         fields = '__all__'
         
         
@@ -203,8 +208,10 @@ class MakePaymentSerializer(serializers.ModelSerializer):
         ref_code = validated_data['ref_code']
         receipt = validated_data['receipt']
         tenant = self.context['request'].user
+        obj = Tenant.objects.get(user=tenant)
+        obj_1= Property.objects.get(flats=obj.flat)
         
-        pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, tenant=tenant)
+        pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, tenant=tenant, property=obj_1)
         return pay
         
 class LandlordDocumentSerializer(serializers.ModelSerializer):
@@ -253,6 +260,23 @@ class LandlordTenantDocSerializer(serializers.ModelSerializer):
         addDocument = LandlordTenantDoc.objects.create(name=name, document=document, tenant=tenant, user=user)
         
         return addDocument
+class ApprovePaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MakePayment
+        fields = ['status']
+        
+    def validate(self, attrs):
+        user_data = self.context['request'].user
+        if user_data.user_type=="manager":
+            man=Manager.objects.get(user=user_data)
+            if man.permit_approval !=True:
+                raise APIException400({"message": "Manager does not have access to approve payment"})
+        return attrs
+
+    def update(self, instance, validated_data):
+        instance.status = validated_data.get('status', instance.status)
+        instance.save()
+        return instance
 
         
             

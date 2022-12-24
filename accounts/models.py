@@ -66,6 +66,7 @@ class Manager(models.Model):
     annual_salary = models.BigIntegerField()
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     property = models.ManyToManyField(Property, blank=True)
+    permit_approval = models.BooleanField(null=True,blank=True,default=False)
     class Meta():
         verbose_name_plural = 'Manager'
 

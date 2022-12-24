@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list, tenants_list, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles, LandlordTenantFiles,LandlordTenantMyFiles, TenantPaymentUpdate, TenantDetails, MakePayment, ViewPayment, PageView
+from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi, CurrentUserView, managers_list,UserManager, tenants_list, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles, TenantPaymentUpdate, TenantDetails, MakePaymentView, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment
 
 urlpatterns = [
 
@@ -20,18 +20,20 @@ urlpatterns = [
     path('add-property', PropertyCreateApi.as_view(), name='add'),
     path('user-details', CurrentUserView.as_view(), name='user'),
     path('managers', views.managers_list),
+    path('manager',UserManager.as_view()),
     path('tenants', views.tenants_list),
+    path('tenants/manager', views.tenants_list_manager),
     path('add-account', AddAccountCreateApi.as_view()),
     path('assign-account', AssignAccountCreateApi.as_view()),
     path('add-expenses', AddExpensesCreateApi.as_view()),
     path('account-list', AccountView.as_view()),
     path('expenses', ExpensesView.as_view()),
-    path('manager-property', ManagerProperty.as_view()),
+    path('manager-property/<int:id>', ManagerProperty.as_view()),
     path('tenant/add-document', AddDocumentCreateApi.as_view()),
     path('tenant/my-files', TenantDocument.as_view()),
     path('tenant-payment', TenantPaymentUpdate.as_view()),
     path('tenant/details', TenantDetails.as_view()),
-    path('make-payment', MakePayment.as_view()),
+    path('make-payment', MakePaymentView.as_view()),
     path('landlord/add-manager-doc', LandlordDocumentCreateApi.as_view()),
     path('manager-files', ManagerFiles.as_view()),
     path('manager/add-document', ManagerDocumentCreateApi.as_view()),
@@ -40,7 +42,12 @@ urlpatterns = [
     path('tenant/add-document', TenantMyFilesCreateApi.as_view()),
     path('tenant-files', TenantFiles.as_view()),
     path('landlord/tenant-files/<int:id>', LandlordTenantMyFiles.as_view()),
+    path('landlord/manager-files/<int:id>', LandlordManagerMyFiles.as_view()),
     path('view-payment', ViewPayment.as_view()),
-    path('page', PageView.as_view())
+    path('view-payment/<int:id>', ViewTenantPayment.as_view()),
+    path('page', PageView.as_view()),
+    path('manager-prop', ManagerProp.as_view()),
+    path('landlord-property/<int:id>', LandlordProperty.as_view()),
+    path('approve-payment/<int:id>', ApprovePayment.as_view())
     
 ]

@@ -7,6 +7,10 @@ payment_type = (
     ('online payment', 'online_payment'),
     ('transfer', 'transfer')
 )
+payment_option = (
+    ('one-off', 'one-off'),
+    ('recurring', 'recurring')
+)
 
 
 
@@ -39,12 +43,12 @@ class Property(models.Model):
 class AddPayment(models.Model):
     name = models.CharField(max_length=100)
     amount = models.PositiveIntegerField()
-    type = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, choices=payment_option, null=True, blank=True)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     termination_date = models.DateField(null=True, blank=True)
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
-
+    property = models.ForeignKey(Property, on_delete=models.CASCADE,null=True, blank=True)
     def __str__(self):
         return str(self.name)
         
@@ -99,6 +103,7 @@ class MakePayment(models.Model):
     receipt = models.FileField(upload_to='documents/tenant-payments', null=True, blank=True)
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     status = models.BooleanField(default=False, null=True, blank=True)
+    property = models.ForeignKey(Property, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return self.description

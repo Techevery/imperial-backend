@@ -17,10 +17,12 @@ from .serializer import *
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView
+from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView,UpdateAPIView
 from accounts.models import Manager, Tenant
+from accounts.serializer import *
 from datetime import datetime, timedelta, time, date
 from django.utils import timezone
+import dateutil.parser
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -196,6 +198,14 @@ class CurrentUserView(APIView):
         return Response(
              serializer.data
         )
+class UserManager(APIView):
+    def get(self, request):
+        man=Manager.objects.get(user=request.user)
+        serializer = ManagerSerializer(man)
+        #serializer.data["data"] = "test"
+        return Response(
+             serializer.data
+        )
 
 @api_view(['GET'])
 def managers_list(request):
@@ -226,8 +236,37 @@ def tenant_list(request):
         })
         
 @api_view(['GET'])
-def tenants_list(request):
+def tenants_list_manager(request):
+    samp={}
+    space=[]
+    user_info = request.user
     tenants = Tenant.objects.all()
+    if request.method == 'GET':
+        if user_info.user_type == 'manager':
+            man=Manager.objects.get(user=request.user)
+            user_data=ManagerSerializer(man)
+            a=user_data.data['user']
+            for test in user_data.data['property']:
+                tenants = Tenant.objects.filter(property=test)
+                serializer = TenantSerializer(tenants, many=True)
+                for i in serializer.data:
+                    show = i['property']
+                    property = Property.objects.filter(id=show)
+                    serializer_2 = PropertySerializer(property, many=True)
+                    for seri in serializer_2.data:
+                        i.update({'property_details':seri})
+                samp.update({"data":serializer.data})
+                space.append(serializer.data)
+        
+                
+                
+            
+            
+        return Response(space)
+        
+@api_view(['GET'])
+def tenants_list(request):
+    tenants= Tenant.objects.all()
     if request.method == 'GET':
         serializer = TenantSerializer(tenants, many=True)
         for i in serializer.data:
@@ -236,9 +275,8 @@ def tenants_list(request):
             serializer_2 = PropertySerializer(property, many=True)
             for seri in serializer_2.data:
                 i.update({'property_details':seri})
-            
-            
-        return Response(serializer.data)
+    return Response(serializer.data)
+        
         
         
 class AddAccountCreateApi(CreateAPIView):
@@ -363,32 +401,184 @@ class ExpensesView(APIView):
                              })
 
 class ManagerProperty(APIView):
-    def get(self, request):
+    def get(self, request, id):
         user_info = request.user
         if user_info.user_type == 'manager':
-            property = Property.objects.filter(user=request.user)
+            property = Property.objects.get(pk=id)
+            man=Manager.objects.get(user=request.user)
+            user_data=ManagerSerializer(man)
         elif user_info.user_type == 'landlord':
-            property = Property.objects.all()
+            property = Property.objects.get(pk=id)
+            serializer = PropertySerializer(property)
             
+
+                
         
-        if property:
-            if request.method == 'GET':
-                serializer = PropertySerializer(property, many=True)
-                for i in serializer.data:
-                    data= i['id']
-                    expenses = AddExpenses.objects.filter(house=data)
-                    tenant = Tenant.objects.filter(property=data)
-                    serializer_2 = AddExpensesserializer(expenses, many=True)
-                    total = 0
-                    for s in serializer_2.data:
-                        total = total + s['amount']
-                        i.update({'expenses':total})
-                print(total)
+        if request.method == 'GET':
+            serializer = PropertySerializer(property)
+    
+            for i in serializer.data['flats']:
+                testing=i['id']
+                tenant_data=Tenant.objects.filter(flat=testing).last()
+                ten=TenantSerializer(tenant_data)
+                tester=ten.data['user']
+                i.update({
+                    'full_name':ten.data['first_name']+' '+ten.data['last_name'],
+                    'number':ten.data['phone_number'],
+                    'tenant_id':ten.data['user']
+                    #'dat':ten.data
+                })
+                count_down= AddPayment.objects.filter(tenant=tester, type="recurring").last()
+                count= AddPayment.objects.filter(tenant=tester, type="recurring")
+                pay = MakePayment.objects.filter(tenant=tester, status=True)
+                pay_serializer = MakePaymentSerializer(pay, many=True)
+                serializer_data = AddPaymentSerializer(count_down)
+                expected_rent=AddPaymentSerializer(count,many=True)
+                now=datetime.now()
+                end = now+timedelta(days=2)
+                tes = serializer_data.data["end_date"]
+                datetime_date = dateutil.parser.parse(str(now))
+                now= datetime_date.strftime("%Y-%m-%d")
+                a="2022-12-30"
+                if tes:
+                    global real, test
+                    real=datetime.strptime(tes,'%Y-%m-%d').date()
+                    rea=datetime.strptime(now,'%Y-%m-%d').date()
+                    test=str(real-rea)
+                else:
+                    test='0'
+                paid=0
+                years=0
+                for pay in pay_serializer.data:
+                    paid=paid+pay["amount"]
+                expected_pay=0
+                for pay in expected_rent.data:
+                    expected_pay=expected_pay+pay["amount"]
+                if expected_pay!=0:
+                    if paid/expected_pay>=1:
+                        years=years+(paid//expected_pay)
+                test =str(test.split("days")[0])
+                i.update({
+                    #"now_4":test,
+                    "amount_paid":paid,
+                    #"ten":ten.data["payment"],
+                    #"pay":pay_serializer.data,
+                    "days_left":(int(test)+years)
+                })
+            a=serializer.data['user']
+            man=Manager.objects.get(user=a)
+            user_data=ManagerSerializer(man)
+                
+                
+                
+                        
+                        
+                
+                
+                
     
     
     
             return Response({
                 'data':serializer.data,
+                "property_name":serializer.data['property_name'],
+                "image":serializer.data['property_image'],
+                "address":serializer.data['address'],
+                "manager":user_data.data['first_name'],
+                "manager_number":user_data.data['phone_number'],
+                #"expenses":total,
+                #"debt":debt,
+                #"total_sum":tenant_paid
+            })
+        else:
+            return Response(status=404)
+            
+class LandlordProperty(APIView):
+    def get(self, request, id):
+        user_info = request.user
+        if user_info.user_type == 'manager':
+            property = Property.objects.get(pk=id)
+            man=Manager.objects.get(user=request.user)
+            user_data=ManagerSerializer(man)
+        elif user_info.user_type == 'landlord':
+            property = Property.objects.get(pk=id)
+                
+        
+        if request.method == 'GET':
+            serializer = PropertySerializer(property)
+    
+            for i in serializer.data['flats']:
+                testing=i['id']
+                tenant_data=Tenant.objects.filter(flat=testing).last()
+                ten=TenantSerializer(tenant_data)
+                tester=ten.data['user']
+                i.update({
+                    'full_name':ten.data['first_name']+' '+ten.data['last_name'],
+                    'number':ten.data['phone_number'],
+                    #'dat':ten.data
+                })
+                count_down= AddPayment.objects.filter(tenant=tester, type="recurring").last()
+                count= AddPayment.objects.filter(tenant=tester, type="recurring")
+                pay = MakePayment.objects.filter(tenant=tester, status=True)
+                pay_serializer = MakePaymentSerializer(pay, many=True)
+                serializer_data = AddPaymentSerializer(count_down)
+                expected_rent=AddPaymentSerializer(count,many=True)
+                now=datetime.now()
+                end = now+timedelta(days=2)
+                tes = serializer_data.data["end_date"]
+                datetime_date = dateutil.parser.parse(str(now))
+                now= datetime_date.strftime("%Y-%m-%d")
+                a="2022-12-30"
+                if tes:
+                    global real, test
+                    real=datetime.strptime(tes,'%Y-%m-%d').date()
+                    rea=datetime.strptime(now,'%Y-%m-%d').date()
+                    test=str(real-rea)
+                else:
+                    test='0'
+                paid=0
+                years=0
+                for pay in pay_serializer.data:
+                    paid=paid+pay["amount"]
+                expected_pay=0
+                for pay in expected_rent.data:
+                    expected_pay=expected_pay+pay["amount"]
+                if expected_pay!=0:
+                    if paid/expected_pay>=1:
+                        years=years+(paid/expected_pay)
+                test =str(test.split("days")[0])
+                i.update({
+                    #"now_4":test,
+                    "amount_paid":paid,
+                    #"ten":ten.data["payment"],
+                    #"pay":pay_serializer.data,
+                    "days_left":(int(test)+years)
+                })
+            a=serializer.data['user']
+            man=Manager.objects.get(user=a)
+            user_data=ManagerSerializer(man)
+                
+                
+                
+                
+                        
+                        
+                
+                
+                
+    
+    
+    
+            return Response({
+                'data':serializer.data,
+                "property_name":serializer.data['property_name'],
+                "image":serializer.data['property_image'],
+                "address":serializer.data['address'],
+                "manager":user_data.data['first_name'],
+                "manager_number":user_data.data['phone_number'],
+                #"expenses":total,
+                #"debt":debt,
+                #"total_sum":tenant_paid
             })
         else:
             return Response(status=404)
@@ -443,7 +633,7 @@ class TenantDetails(APIView):
 
              })
     
-class MakePayment(CreateAPIView):
+class MakePaymentView(CreateAPIView):
     serializer_class = MakePaymentSerializer
     permission_classes = [IsAuthenticated]
 
@@ -613,6 +803,15 @@ class LandlordTenantMyFiles(APIView):
             serializer = AddDocumentSerializer(document, many=True)
             
         return Response(serializer.data)
+
+class LandlordManagerMyFiles(APIView):
+    def get(self, request, id):
+        document = ManagerDocument.objects.filter(user=id)
+        
+        if request.method == 'GET':
+            serializer = ManagerDocumentSerializer(document, many=True)
+            
+        return Response(serializer.data)
             
 class ViewPayment(APIView):
     def get(self, request):
@@ -625,29 +824,158 @@ class ViewPayment(APIView):
         if request.method == 'GET':
             serializer = MakePaymentSerializer(pay, many=True)
             return Response(serializer.data)
-        
+class ViewTenantPayment(APIView):
+    def get(self, request, id):
+        if request.method == 'GET':
+            pay=MakePayment.objects.filter(tenant=id)
+            serializer = MakePaymentSerializer(pay, many=True)
+            return Response(serializer.data)
             
 class PageView(APIView):
     #serializer_class = AddPaymentSerializer
     def get(self, request):
-        #tenant = Tenant.objects.get(user=request.user.id)
-        count_down = AddPayment.objects.filter(tenant=request.user.id, name='rent').last()
+        tenant = Tenant.objects.get(user=request.user.id)
+        ten=TenantSerializer(tenant)
+        count_down = AddPayment.objects.filter(tenant=request.user.id, type="recurring").last()
+        count= AddPayment.objects.filter(tenant=request.user.id, type="recurring")
+        pay = MakePayment.objects.filter(tenant=request.user.id, status=True)
+        pay_serializer = MakePaymentSerializer(pay, many=True)
         serializer_data = AddPaymentSerializer(count_down)
-        now = datetime.now()
-        #start = date(value(now))
-        #days = now + count_down.end_date
-        #ten_minutes_ago = now + timedelta(minutes=-1)
-        #end = date(int(count_down.end_date.strftime("%Y%m%d")))
-        #day = end-now
-        #days = day.days()
+        expected_rent=AddPaymentSerializer(count,many=True)
+        now=datetime.now()
         end = now+timedelta(days=2)
         #test=datetime.datetime.strptime(now,'%m/%d/%Y').date()
         final=str(end-now)
+        tes = serializer_data.data["end_date"]
+        datetime_date = dateutil.parser.parse(str(now))
+        now= datetime_date.strftime("%Y-%m-%d")
+        a="2022-12-30"
+        if tes:
+            global real, test
+            real=datetime.strptime(tes,'%Y-%m-%d').date()
+            rea=datetime.strptime(now,'%Y-%m-%d').date()
+            test=str(real-rea)
+        else:
+            test=0
+        paid=0
+        years=0
+        for pay in pay_serializer.data:
+            paid=paid+pay["amount"]
+        expected_pay=0
+        for pay in expected_rent.data:
+            expected_pay=expected_pay+pay["amount"]
+        if paid/expected_pay>=1:
+            years=years+(paid//expected_pay)
+        test =str(test.split("days")[0])
+            
+            
         
         return Response({
-             "payment-data": serializer_data.data,
-             "days":final,
-             "now":now,
-             "now2": serializer_data.data["end_date"],
-             "split":str(serializer_data.data["end_date"])-str(serializer_data.data["end_date"])
+             #"payment-data": serializer_data.data,
+             #"days":final,
+             #"now":now,
+             #"now2": serializer_data.data["end_date"],
+             #"now3":real,
+             #"now_4":test,
+             #"paid":paid,
+             #"ten":ten.data["payment"],
+             #"pay":pay_serializer.data,
+             "days_left":(int(test)+years)
+             
+             
              })
+             
+class ManagerProp(APIView):
+    def get(self, request):
+        user_info = request.user
+        if user_info.user_type == 'manager':
+            #target=request.user.email
+            property = Property.objects.filter(user=request.user)
+            man=Manager.objects.get(user=request.user)
+            user_data=ManagerSerializer(man)
+            
+        elif user_info.user_type == 'landlord':
+            property = Property.objects.all()
+        if request.method == 'GET':
+            serializer = PropertySerializer(property, many=True)
+            for i in serializer.data:
+                data= i['id']
+                head_id = i['user']
+                expenses = AddExpenses.objects.filter(house=data)
+                serializer_2 = AddExpensesserializer(expenses, many=True)
+                payment = AddPayment.objects.filter(property=data,)
+                paid = MakePayment.objects.filter(property=data)
+                tenant = Tenant.objects.filter(property=data)
+                serial_2 = AddPaymentSerializer(payment, many=True)
+                serial_3 = MakePaymentSerializer(paid, many=True)
+                tenant_paid=0
+                for t in serial_3.data:
+                    tenant_paid = tenant_paid + t['amount']
+                    i.update({'paid':tenant_paid})
+                sum =0
+                for s in serial_2.data:
+                    sum = sum + s['amount']
+                    i.update({'Sum':sum})
+                
+                expense = 0
+                for s in serializer_2.data:
+                    expense = expense + s['amount']
+                    i.update({'expenses':expense})
+                debt= tenant_paid-sum
+                i.update({
+                    "debt":debt,
+                    "total_sum":tenant_paid   
+                })
+                a=i['user']
+                man=Manager.objects.filter(user=a).last()
+                user_data=ManagerSerializer(man)
+                i.update({
+                    "manager":user_data.data['first_name']+' '+user_data.data['last_name']
+                })
+                
+            
+        return Response({
+            #"property_name":serializer.data[0]['property_name'],
+            #"image":serializer.data[0]['property_image'],
+            #"address":serializer.data[0]['address'],
+            #"manager":user_data.data['first_name'],
+            #"expenses":expense,
+            #"debt":debt,
+            #"total_sum":tenant_paid,
+            "data":serializer.data
+            })
+class TenantUpdate(APIView):
+    def get(self, request):
+        pass
+    
+class ApprovePayment(UpdateAPIView):
+    serializer_class = ApprovePaymentSerializer
+    permission_classes = [IsAuthenticated]
+    model = MakePayment
+
+    def put(self, request, id):
+        instance = self.model.objects.get(pk=id)
+        serialized_data = self.get_serializer(instance, data=request.data)
+        if serialized_data.is_valid(raise_exception=True):
+            self.perform_update(serialized_data)
+            return Response(serialized_data.data)
+        error_keys = list(serialized_data.errors.keys())
+        if error_keys:
+            error_msg = serialized_data.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serialized_data.errors, status=400)
+
+    def patch(self, request, id):
+
+        instance = self.model.objects.get(pk=id)
+        serialized_data = self.get_serializer(instance, data=request.data, partial=True)
+        if serialized_data.is_valid(raise_exception=True):
+            self.perform_update(serialized_data)
+            return Response(serialized_data.data)
+
+        error_keys = list(serialized_data.errors.keys())
+        if error_keys:
+            error_msg = serialized_data.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serialized_data.errors, status=400)
+        
