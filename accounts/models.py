@@ -52,6 +52,8 @@ class LandLord(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, null=True, blank=True)
+    phone_number = PhoneNumberField(null=True, blank=True, unique=True)
+    address= models.TextField(null=True, blank=True)
 
     class Meta():
         verbose_name_plural = 'LandLords'
@@ -67,6 +69,7 @@ class Manager(models.Model):
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     property = models.ManyToManyField(Property, blank=True)
     permit_approval = models.BooleanField(null=True,blank=True,default=False)
+    account_status = models.BooleanField(null=True, blank=True, default=True)
     class Meta():
         verbose_name_plural = 'Manager'
 
@@ -90,6 +93,7 @@ class Tenant(models.Model):
     place_of_work = models.CharField(max_length=100, null=True, blank=True)
     position_at_work = models.CharField(max_length=100, null=True, blank=True)
     purpose_of_rent = models.TextField(null=True, blank=True)
+    account_status = models.BooleanField(null=True, blank=True, default=True)
 
 
     class Meta():

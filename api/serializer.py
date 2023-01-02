@@ -143,17 +143,19 @@ class AssignAccountserializer(serializers.ModelSerializer):
 class AddExpensesserializer(serializers.ModelSerializer):
     class Meta:
         model = AddExpenses
-        fields = ['amount', 'description', 'house', 'receipt']
+        fields = ['amount', 'description', 'house','flat_id','tenant', 'receipt']
 
     def create(self, validated_data):
         amount = validated_data['amount']
         description = validated_data['description']
         house = validated_data['house']
+        flat_id=validated_data['flat_id']
+        tenant=validated_data['tenant']
         receipt = validated_data['receipt']
         user = self.context['request'].user
 
 
-        addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house, receipt=receipt, user=user)
+        addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house,flat_id=flat_id,tenant=tenant,receipt=receipt, user=user)
         return addExpenses
 
 class AssignAccountSerializer(serializers.ModelSerializer):
@@ -212,6 +214,49 @@ class MakePaymentSerializer(serializers.ModelSerializer):
         obj_1= Property.objects.get(flats=obj.flat)
         
         pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, tenant=tenant, property=obj_1)
+        return pay
+        
+class SalaryPaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaySalary
+        fields = '__all__'
+        
+        
+    def validate(self, attrs):
+        description = attrs['description']
+        amount = attrs['amount']
+        type = attrs['type']
+        ref_code = attrs['ref_code']
+        receipt = attrs['receipt']
+        
+        if not amount:
+            raise APIException400({"message": "please enter a valid amount"})
+        if type == 'transfer':
+            if not receipt:
+                raise APIException400({"message": "please provide receipt for payment by transfer"})
+                
+        if type == 'online payment':
+            if not ref_code:
+                raise APIException400({"message": "please generate a ref code"})
+                
+        return attrs
+                
+    def create(self, validated_data):
+        description = validated_data['description']
+        amount = validated_data['amount']
+        type = validated_data['type']
+        ref_code = validated_data['ref_code']
+        receipt = validated_data['receipt']
+        manager = validated_data['manager']
+        user = self.context['request'].user
+        if type=='transfer':
+            status=True
+        else:
+            status=False
+        #obj = Tenant.objects.get(user=tenant)
+        #obj_1= Property.objects.get(flats=obj.flat)
+        
+        pay = PaySalary.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, status=status, manager=manager,user=user)
         return pay
         
 class LandlordDocumentSerializer(serializers.ModelSerializer):
@@ -275,6 +320,16 @@ class ApprovePaymentSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.status = validated_data.get('status', instance.status)
+        instance.save()
+        return instance
+        
+class ApproveSalarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaySalary
+        fields = ['manager_verify']
+
+    def update(self, instance, validated_data):
+        instance.manager_verify = validated_data.get('manager_verify', instance.manager_verify)
         instance.save()
         return instance
 

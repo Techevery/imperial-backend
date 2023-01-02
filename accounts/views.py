@@ -188,6 +188,39 @@ class UpdateManagerView(UpdateAPIView):
             error_msg = serialized_data.errors[error_keys[0]]
             return Response({'message': error_msg[0]}, status=400)
         return Response(serialized_data.errors, status=400)
+        
+class UpdateLandlordView(UpdateAPIView):
+    serializer_class = LandlordChangeSerializer
+    permission_classes = [IsAuthenticated]
+    model = LandLord
+
+    def put(self, request):
+        instance = self.model.objects.get(user=request.user)
+        serialized_data = self.get_serializer(instance, data=request.data)
+        if serialized_data.is_valid(raise_exception=True):
+            self.perform_update(serialized_data)
+            return Response(serialized_data.data)
+
+        error_keys = list(serialized_data.errors.keys())
+        if error_keys:
+            error_msg = serialized_data.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serialized_data.errors, status=400)
+
+
+    def patch(self, request):
+
+        instance = self.model.objects.get(user=request.user)
+        serialized_data = self.get_serializer(instance, data=request.data, partial=True)
+        if serialized_data.is_valid(raise_exception=True):
+            self.perform_update(serialized_data)
+            return Response(serialized_data.data)
+
+        error_keys = list(serialized_data.errors.keys())
+        if error_keys:
+            error_msg = serialized_data.errors[error_keys[0]]
+            return Response({'message': error_msg[0]}, status=400)
+        return Response(serialized_data.errors, status=400)
 
 class UpdateManagerPermission(UpdateAPIView):
     serializer_class = ManagerChangeSerializer

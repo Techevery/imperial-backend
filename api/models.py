@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.conf import settings
-
 # Create your models here.
 payment_type = (
     ('online payment', 'online_payment'),
@@ -9,7 +8,8 @@ payment_type = (
 )
 payment_option = (
     ('one-off', 'one-off'),
-    ('recurring', 'recurring')
+    ('recurring', 'recurring'),
+    ('refundable', 'refundable')
 )
 
 
@@ -78,7 +78,9 @@ class AddExpenses(models.Model):
     amount = models.PositiveIntegerField()
     description = models.TextField()
     house = models.ForeignKey(Property, on_delete=models.CASCADE)
+    flat_id = models.ForeignKey(Flat, on_delete=models.CASCADE, null=True, blank=True)
     receipt = models.FileField(upload_to='documents/')
+    tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name="tenant_id")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
     
@@ -104,6 +106,20 @@ class MakePayment(models.Model):
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     status = models.BooleanField(default=False, null=True, blank=True)
     property = models.ForeignKey(Property, on_delete=models.CASCADE,null=True, blank=True)
+
+    def __str__(self):
+        return self.description
+        
+class PaySalary(models.Model):
+    description = models.TextField()
+    amount = models.PositiveIntegerField()
+    type = models.CharField(max_length=100, choices=payment_type)
+    ref_code = models.CharField(max_length=100, null=True, blank=True, unique=True)
+    receipt = models.FileField(upload_to='documents/salary-payments', null=True, blank=True)
+    manager = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='user_manager')
+    status = models.BooleanField(default=False, null=True, blank=True)
+    manager_verify= models.BooleanField(default=False, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.description
