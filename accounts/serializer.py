@@ -173,7 +173,7 @@ class TenantCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tenant
-        fields = ('email', 'first_name', 'last_name','user_type', 'phone_number', 'property', 'flat', 'payment')
+        fields = ('email', 'first_name', 'last_name','user_type', 'phone_number', 'property', 'flat', 'payment', 'next_of_kin', 'former_address')
         extra_kwargs = {
             'password': {'write_only': True},
         }
@@ -184,12 +184,13 @@ class TenantCreateSerializer(serializers.ModelSerializer):
         last_name = attrs['last_name']
         property = attrs['property']
         flat = attrs['flat']
+        payment=attrs['payment']
 
         if not email:
             raise APIException400({"message": "email is required"})
         if User.objects.filter(email=email).exists():
             raise APIException400({"message": "This email already exists. Please login"})
-        if Tenant.objects.filter(flat=flat).exists():
+        if Tenant.objects.filter(flat=flat, account_status=True).exists():
             raise  APIException400({"message": "Tenant currently occupying this flat"})
         if not first_name:
             raise APIException400({"message": "first_name is required"})
@@ -214,18 +215,23 @@ class TenantCreateSerializer(serializers.ModelSerializer):
         user = User.objects.create(email=email, user_type='tenant')
         user.set_password(validated_data['password'])
         user.save()
-        tenant_obj = Tenant.objects.create(user=user, first_name=first_name, last_name=last_name, flat=flat, property=property, phone_number=phone_number)
+        tenant_obj = Tenant.objects.create(user=user, first_name=first_name, last_name=last_name, flat=flat, property=property, phone_number=phone_number, next_of_kin=next_of_kin, former_address=former_address)
         validated_data['user_id'] = user.id
         validated_data['email'] = user.email
         validated_data['user_type'] = 'tenant'
 
         for payment_data in payments_data:
             print(payment_data)
-            payment = AddPayment.objects.create(**payment_data, property=property) 
+            payment = AddPayment.objects.create(**payment_data, property=property, tenant=user) 
             tenant_obj.payment.add(payment)
-        flat_update = Flat.objects.filter(property__property_name=property,name=flat).last()
+        prop=Property.objects.get(property_name=property)
+        a=prop.id
+       
+        flat_update=Flat.objects.filter(test_id=a,name=flat).first()
         flat_update.vacant=False
-        flat_update.save(update_fields=['vacant'])
+        flat_update.current_tenant=user
+        flat_update.all_tenants.add(user)
+        flat_update.save(update_fields=['vacant', 'current_tenant'])
 
         return validated_data
         
@@ -254,12 +260,14 @@ class TenantChangeSerializer(serializers.ModelSerializer):
 class ManagerChangeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Manager
-        fields = ['first_name', 'last_name', 'phone_number','permit_approval']
+        fields = ['first_name', 'last_name', 'phone_number','permit_approval', 'photo', 'address']
 
     def update(self, instance, validated_data):
+        instance.photo = validated_data.get('photo', instance.photo)
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
         instance.phone_number = validated_data.get('phone_number', instance.phone_number)
+        instance.address = validated_data.get('address', instance.address)
         instance.permit_approval = validated_data.get('permit_approval', instance.permit_approval)
 
         instance.save()
@@ -268,9 +276,10 @@ class ManagerChangeSerializer(serializers.ModelSerializer):
 class LandlordChangeSerializer(serializers.ModelSerializer):
     class Meta:
         model = LandLord
-        fields = ['first_name', 'last_name', 'phone_number','address']
+        fields = ['first_name', 'last_name', 'phone_number','address', 'photo']
 
     def update(self, instance, validated_data):
+        instance.photo = validated_data.get('photo', instance.photo)
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
         instance.phone_number = validated_data.get('phone_number', instance.phone_number)
@@ -278,3 +287,73 @@ class LandlordChangeSerializer(serializers.ModelSerializer):
 
         instance.save()
         return instance
+        
+class DeactivateTenantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tenant
+        fields=['user','account_status','flat','property']
+
+    def update(self, instance, validated_data):
+        instance.account_status = validated_data.get('account_status', instance.account_status)
+        instance.flat=validated_data.get('flat', instance.flat)
+        instance.property=validated_data.get('property', instance.property)
+        instance.user=validated_data.get('user', instance.user)
+        ten=Tenant.objects.get(flat=instance.flat)
+        prop=Property.objects.filter(property_name=instance.property).first()
+        a=prop.id
+        b=instance.flat
+        if instance.account_status==False:
+            if Flat.objects.filter(current_tenant=instance.user).exists():
+                flat_prop=Flat.objects.filter(current_tenant=instance.user).first()
+                flat_prop.current_tenant=None
+                flat_prop.vacant=True
+                flat_prop.save(update_fields=['current_tenant', 'vacant'])
+            else:
+                raise APIException400({"message": "Tenant is not currently activated"})
+        elif instance.account_status==True:
+            vacancy = Flat.objects.filter(name=b, test_id=a, vacant=True).first()
+            if vacancy:
+                vacancy.current_tenant=instance.user
+                vacancy.vacant=False
+                vacancy.save(update_fields=['current_tenant', 'vacant'])
+            else:
+                raise APIException400({"message": "A Tenant is currently occupying this flat"})
+            
+        instance.save()
+
+        return instance
+        
+class ActivateTenantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tenant
+        fields=['user','account_status','flat','property']
+
+    def update(self, instance, validated_data):
+        instance.account_status = validated_data.get('account_status', instance.account_status)
+        instance.flat=validated_data.get('flat', instance.flat)
+        instance.property=validated_data.get('property', instance.property)
+        instance.user=validated_data.get('user', instance.user)
+        ten=Tenant.objects.get(flat=instance.flat)
+        prop=Property.objects.filter(property_name=instance.property).first()
+        a=prop.id
+        b=instance.flat
+        vacancy = Flat.objects.filter(name=b, test_id=a, vacant=True).first()
+        if vacancy:
+            vacancy.current_tenant=instance.user
+            vacancy.vacant=False
+            vacancy.save(update_fields=['current_tenant', 'vacant'])
+        else:
+            raise APIException400({"message": "A Tenant is currently occupying this flat"})
+        instance.save()
+
+        return instance
+        
+class ChangePasswordSerializer(serializers.Serializer):
+    model = User
+        
+
+    """
+    Serializer for password change endpoint.
+    """
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)

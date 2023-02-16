@@ -22,7 +22,9 @@ class Flat(models.Model):
     number_of_toilets = models.PositiveIntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     test_id = models.IntegerField(null=True, blank=True)
-    vacant = models.BooleanField(null=True, blank=True)
+    current_tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='active_tenant')
+    all_tenants = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='tenant_list')
+    vacant = models.BooleanField(null=True, blank=True, default=True)
 
     def __str__(self):
         return str(self.name)
@@ -30,10 +32,11 @@ class Flat(models.Model):
 
 class Property(models.Model):
     property_image = models.ImageField(blank=True, null=True, upload_to='uploads/properties')
-    property_name = models.CharField(max_length=100)
+    property_name = models.CharField(max_length=100, unique=True)
     address = models.TextField()
     flats = models.ManyToManyField(Flat,blank=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    
 
 
     def __str__(self):
@@ -58,7 +61,7 @@ class AddAccount(models.Model):
     bank_name = models.CharField(max_length=100)
     account_number = models.PositiveIntegerField()
     comment = models.TextField()
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.account_name)
@@ -83,6 +86,7 @@ class AddExpenses(models.Model):
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name="tenant_id")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
+    approved_date = models.DateField(auto_now_add=False, auto_now=True)
     
     def __str__(self):
         return str(self.house)
@@ -106,7 +110,8 @@ class MakePayment(models.Model):
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     status = models.BooleanField(default=False, null=True, blank=True)
     property = models.ForeignKey(Property, on_delete=models.CASCADE,null=True, blank=True)
-
+    payment_date_and_time = models.DateTimeField(auto_now_add=True)
+    approved_date = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
         return self.description
         
@@ -117,9 +122,10 @@ class PaySalary(models.Model):
     ref_code = models.CharField(max_length=100, null=True, blank=True, unique=True)
     receipt = models.FileField(upload_to='documents/salary-payments', null=True, blank=True)
     manager = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='user_manager')
-    status = models.BooleanField(default=False, null=True, blank=True)
+    status = models.BooleanField(default=True, null=True, blank=True)
     manager_verify= models.BooleanField(default=False, null=True, blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    payment_date_and_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.description

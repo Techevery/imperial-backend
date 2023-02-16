@@ -11,7 +11,13 @@ from .models import *
 from accounts.models import Manager, Tenant, LandLord
 # Register serializer
 from rest_framework.exceptions import APIException
-from drf_extra_fields.fields import Base64ImageField
+from drf_extra_fields.fields import Base64ImageField, Base64FileField
+import base64
+from io import BytesIO
+from PIL import Image
+import PyPDF2
+from PyPDF2 import PdfFileReader, PdfFileWriter
+import os
 
 User = get_user_model()
 
@@ -46,6 +52,16 @@ class PropertySerializer(serializers.ModelSerializer):
             raise APIException400({"message": "property must have a name"})
         if not address:
             raise APIException400({"message": "property must have address"})
+        b=[]
+        for flat in flats:
+            a=flat['name']
+            #if Flat.objects.filter(name=a).exists():
+                #raise APIException400({"message": "flat name exists"})
+            if a not in b:
+                b.append(a)
+            else:
+                raise APIException400({"message": "property can not have flats with similar name"})
+            
 
         return attrs
 
@@ -60,7 +76,7 @@ class PropertySerializer(serializers.ModelSerializer):
             flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
             property.flats.add(flat)
             
-        return property
+    
         
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -143,19 +159,17 @@ class AssignAccountserializer(serializers.ModelSerializer):
 class AddExpensesserializer(serializers.ModelSerializer):
     class Meta:
         model = AddExpenses
-        fields = ['amount', 'description', 'house','flat_id','tenant', 'receipt']
+        fields = ['amount', 'description', 'house','receipt']
 
     def create(self, validated_data):
         amount = validated_data['amount']
         description = validated_data['description']
         house = validated_data['house']
-        flat_id=validated_data['flat_id']
-        tenant=validated_data['tenant']
         receipt = validated_data['receipt']
         user = self.context['request'].user
 
 
-        addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house,flat_id=flat_id,tenant=tenant,receipt=receipt, user=user)
+        addExpenses = AddExpenses.objects.create(amount=amount, description=description, house=house,receipt=receipt, user=user)
         return addExpenses
 
 class AssignAccountSerializer(serializers.ModelSerializer):
@@ -167,7 +181,7 @@ class AssignAccountSerializer(serializers.ModelSerializer):
 class AddDocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddDocument
-        fields = ['name', 'document', 'date']
+        fields = ['id','name', 'document', 'date']
         
     def create(self, validated_data):
         name = validated_data['name']
@@ -178,6 +192,34 @@ class AddDocumentSerializer(serializers.ModelSerializer):
         
         return addDocument
         
+def validate_document_file(value):
+    try:
+        # Check if the file is base64 encoded
+        if "data:" not in value:
+            raise serializers.ValidationError("Not a valid document")
+        format, docstr = value.split(";base64,")
+        ext = format.split("/")[-1]
+        # Decode the base64 encoded file
+        decoded_file = base64.b64decode(docstr)
+        # Check if the decoded file is a valid document format
+        if ext not in ["pdf", "doc", "docx", "txt"]:
+            raise serializers.ValidationError("Not a valid document")
+        # Return the decoded file
+        return decoded_file
+    except:
+        raise serializers.ValidationError("Not a valid document")
+        
+class Base64File(Base64FileField):
+    ALLOWED_TYPES = ['pdf']
+
+    def get_file_extension(self, filename, decoded_file):
+        try:
+            PyPDF2.PdfFileReader(io.BytesIO(decoded_file))
+        except PyPDF2.utils.PdfReadError as e:
+            logger.warning(e)
+        else:
+            return 'pdf'
+
 class MakePaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = MakePayment
@@ -188,32 +230,32 @@ class MakePaymentSerializer(serializers.ModelSerializer):
         description = attrs['description']
         amount = attrs['amount']
         type = attrs['type']
-        ref_code = attrs['ref_code']
-        receipt = attrs['receipt']
         
+        
+        if not description:
+            raise APIException400({"message": "please enter a description"})
         if not amount:
             raise APIException400({"message": "please enter a valid amount"})
-        if type == 'transfer':
-            if not receipt:
-                raise APIException400({"message": "please provide receipt for payment by transfer"})
-                
-        if type == 'online payment':
-            if not ref_code:
-                raise APIException400({"message": "please generate a ref code"})
+        if not type:
+            raise APIException400({"message": "please specify a type"})
+        
+            
                 
         return attrs
                 
     def create(self, validated_data):
+        
         description = validated_data['description']
         amount = validated_data['amount']
         type = validated_data['type']
-        ref_code = validated_data['ref_code']
         receipt = validated_data['receipt']
+        ref_code = validated_data['ref_code']
         tenant = self.context['request'].user
         obj = Tenant.objects.get(user=tenant)
         obj_1= Property.objects.get(flats=obj.flat)
         
         pay = MakePayment.objects.create(description=description, amount=amount, type=type, ref_code=ref_code, receipt=receipt, tenant=tenant, property=obj_1)
+        
         return pay
         
 class SalaryPaymentSerializer(serializers.ModelSerializer):
@@ -260,10 +302,10 @@ class SalaryPaymentSerializer(serializers.ModelSerializer):
         return pay
         
 class LandlordDocumentSerializer(serializers.ModelSerializer):
-    test = User.objects.get(id=66)
+    #test = User.objects.get(id=66)
     class Meta:
         model = LandlordDocument
-        fields = ['name', 'document', 'date', 'manager']
+        fields = ['id','name', 'document', 'date', 'manager']
         
     def create(self, validated_data):
         name = validated_data['name']
@@ -277,10 +319,10 @@ class LandlordDocumentSerializer(serializers.ModelSerializer):
         return addDocument
     
 class ManagerDocumentSerializer(serializers.ModelSerializer):
-    test = User.objects.get(id=66)
+    #test = User.objects.get(id=66)
     class Meta:
         model = ManagerDocument
-        fields = ['name', 'document', 'date']
+        fields = ['id','name', 'document', 'date']
         
     def create(self, validated_data):
         name = validated_data['name']
@@ -294,7 +336,7 @@ class ManagerDocumentSerializer(serializers.ModelSerializer):
 class LandlordTenantDocSerializer(serializers.ModelSerializer):
     class Meta:
         model = LandlordTenantDoc
-        fields = ['name', 'document', 'date','tenant']
+        fields = ['id','name', 'document', 'date','tenant']
         
     def create(self, validated_data):
         name = validated_data['name']
@@ -332,7 +374,82 @@ class ApproveSalarySerializer(serializers.ModelSerializer):
         instance.manager_verify = validated_data.get('manager_verify', instance.manager_verify)
         instance.save()
         return instance
+        
+class EditPropertySerializer(serializers.ModelSerializer):
+    property_image = Base64ImageField(required=False)
+    class Meta:
+        model = Property
+        fields = ['property_name', 'user' ,'address','property_image']
+        
+        
+    def update(self, instance, validated_data):
+        instance.property_name = validated_data.get('property_name', instance.property_name)
+        instance.property_image = validated_data.get('property_image', instance.property_image)
+        instance.address = validated_data.get('address', instance.address)
+        instance.user = validated_data.get('user', instance.user)
+        instance.save()
+        return instance
+        
+class DeleteFlatFromProp(serializers.ModelSerializer):
+    flats = FlatSerializer(many=True)
+    class Meta:
+        model = Property
+        fields = '__all__'
+        
+    def get_or_create_flatss(self, flatss):
+        flats_ids = []
+        for flats in flatss:
+            flats_instance, created = Flats.objects.get_or_create(pk=flats.get('id'), defaults=flats)
+            flats_ids.append(flats_instance.pk)
+        return flats_ids
+
+    def create_or_update_flatss(self, flatss):
+        flats_ids = []
+        for flats in flatss:
+            flats_instance, created = Flats.objects.update_or_create(pk=flats.get('id'), defaults=flats)
+            flats_ids.append(flats_instance.pk)
+        return flats_ids
+
+    def create(self, validated_data):
+        flats = validated_data.pop('flats', [])
+        property = Property.objects.create(**validated_data)
+        property.flats.set(self.get_or_create_flatss(flats))
+        return order
+
+    def update(self, instance, validated_data):
+        flats = validated_data.pop('flats', [])
+        instance.flats.set(self.create_or_update_flatss(flats))
+        fields = ['test_id']
+        for field in fields:
+            try:
+                setattr(instance, field, validated_data[field])
+            except KeyError:  # validated_data may not contain all fields during HTTP PATCH
+                pass
+        instance.save()
+        return instance
+        
+class EditFlatFromProp(serializers.Serializer):
+    flats = FlatSerializer(many=True)
+    class Meta:
+        fields=("flats",)
+        
+    def create(self, validated_data):
+        flats_data = validated_data.pop('flats')
+        #prop_id = self.context['view'].kwargs.get('id')
+        prop_id=self.context.get('request').parser_context.get('kwargs').get(
+        'id') 
+        property=Property.objects.filter(id=prop_id).last()
+        for flat_data in flats_data:
+            print(flat_data)
+            flat=Flat.objects.create(**flat_data, test_id=prop_id)
+            property.flats.add(flat)
+            
+        return property
 
         
+        
+   
+        
+
             
     

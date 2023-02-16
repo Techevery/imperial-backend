@@ -32,4 +32,3 @@ admin.site.register(Flat, BookSlotAdmin)
 admin.site.register(AddPayment)
 admin.site.register(MakePayment, MakePaymentAdmin)
 admin.site.register(AddExpenses, ExpenseAdmin)
-

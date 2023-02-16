@@ -4,7 +4,10 @@ from django.contrib.auth.models import UserManager as BaseUserManager
 from phonenumber_field.modelfields import PhoneNumberField
 from api.models import Property, Flat, AddPayment
 from tabnanny import verbose
-
+from django.dispatch import receiver
+from django.urls import reverse
+from django_rest_passwordreset.signals import reset_password_token_created
+from django.core.mail import send_mail 
 
 # Create your models here.
 
@@ -34,6 +37,8 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 USER_TYPE = (('landlord', 'landlord'), ('tenant', 'tenant'), ('manager', 'manager'))
+GENDER = (('Male','Male'), ('Female','Female'), ('Others', 'Others'))
+MARITAL_STATUS=(('Married','Married'), ('Single','Single'))
 class User(AbstractUser):
     objects = UserManager()
     USERNAME_FIELD = 'email'
@@ -47,13 +52,14 @@ class User(AbstractUser):
 
     def __str__(self):
         return str(self.email)
-
+      
 class LandLord(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, null=True, blank=True)
     phone_number = PhoneNumberField(null=True, blank=True, unique=True)
     address= models.TextField(null=True, blank=True)
+    photo = models.ImageField(blank=True, null=True, upload_to='uploads/landlord-pictures')
 
     class Meta():
         verbose_name_plural = 'LandLords'
@@ -65,11 +71,21 @@ class Manager(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, null=True, blank=True)
+    photo = models.ImageField(blank=True, null=True, upload_to='uploads/manager-pictures')
+    address= models.TextField(null=True, blank=True)
     annual_salary = models.BigIntegerField()
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     property = models.ManyToManyField(Property, blank=True)
     permit_approval = models.BooleanField(null=True,blank=True,default=False)
     account_status = models.BooleanField(null=True, blank=True, default=True)
+    gender = models.CharField(max_length=100, null=True, blank=True, choices=GENDER)
+    marital_status = models.CharField(max_length=100, null=True, blank=True, choices=MARITAL_STATUS)
+    state_of_origin = models.CharField(max_length=100, null=True, blank=True)
+    next_of_kin = models.CharField(max_length=100, null=True, blank=True)
+    next_of_kin_email = models.EmailField(null=True, blank=True)
+    next_of_kin = PhoneNumberField(null=True, blank=True)
+    emergency_contact_info = models.TextField(null=True, blank=True)
+    
     class Meta():
         verbose_name_plural = 'Manager'
 
@@ -101,8 +117,22 @@ class Tenant(models.Model):
 
     def __str__(self):
         return str(self.first_name)
+        
+@receiver(reset_password_token_created)
+def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
 
+    email_plaintext_message = "{}?token={}".format(reverse('password_reset:reset-password-request'), reset_password_token.key)
 
+    send_mail(
+        # title:
+        "Password Reset for {title}".format(title="Mperial Account Reset"),
+        # message:
+        email_plaintext_message,
+        # from:
+        "noreply@techevery.ng",
+        # to:
+        [reset_password_token.user.email]
+    )
 
 
 
