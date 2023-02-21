@@ -1243,10 +1243,12 @@ class PageView(APIView):
         count_down = AddPayment.objects.filter(tenant=request.user.id, type="recurring").last()
         count= AddPayment.objects.filter(tenant=request.user.id, type="recurring")
         count_1= AddPayment.objects.filter(tenant=request.user.id, type="one-off")
+        count_2= AddPayment.objects.filter(tenant=request.user.id, type="refundable")
         
         pay = MakePayment.objects.filter(tenant=request.user.id, status=True)
         pay_serializer = MakePaymentSerializer(pay, many=True)
         one_off = AddPaymentSerializer(count_1, many=True)
+        optional_pay=AddPaymentSerializer(count_2,many=True)
         serializer_data = AddPaymentSerializer(count_down)
         expected_rent=AddPaymentSerializer(count,many=True)
         now=datetime.now()
@@ -1272,21 +1274,48 @@ class PageView(APIView):
         for pay in pay_serializer.data:
             paid=paid+pay["amount"]
         expected_pay=0
+        optional_total=0
+        one_off_total=0
         for pay in expected_rent.data:
             expected_pay=expected_pay+pay["amount"]
+        for amount in optional_pay.data:
+            optional_total=optional_total+amount['amount']
+        for amount in one_off.data:
+            one_off_total=one_off_total+amount['amount']
         if expected_pay !=0:
             
             if paid/expected_pay>=1:
-                years=years+((((paid)//expected_pay)-1)*365)
+                if paid/(expected_pay+one_off_total)>=1:
+                    years=years+((((paid-one_off_total)//expected_pay)-1)*365)
         if paid>=expected_pay:
             pass
         #else:
         #test='0'
             
-        test =str(test.split("days")[0])
+        if 's' in test:
+            test =str(test.split("days")[0])
+        else:
+            test =str(test.split("day")[0])
+            
         if test=="0:00:00":
             test="0"
-            
+        rent_status=""
+        debt=0
+        if paid>=expected_pay:
+            rent_status="paid"
+            debt=0
+
+        else:
+            debt=expected_pay-paid
+            rent_status="owing"
+        check=(int(test)+years)
+        if check<0:
+            value=(check//365)
+            debt = value*expected_pay
+            debt=(debt+paid-expected_pay)
+            rent_status="owing"
+        
+        
             
         
         return Response({
@@ -1299,7 +1328,9 @@ class PageView(APIView):
              #"paid":paid,
              #"ten":ten.data["payment"],
              #"pay":pay_serializer.data,
-             "days_left":(int(test)+years)
+             "days_left":(int(test)+years),
+             "rent_status":rent_status,
+             "debt":debt
              
              
              })

@@ -65,7 +65,7 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
     phone_number = PhoneNumberField()
     class Meta:
         model = Manager
-        fields = ('email', 'first_name', 'last_name', 'user_type', 'property', 'phone_number')
+        fields = ('email', 'first_name', 'last_name', 'user_type', 'property', 'phone_number', 'gender', 'marital_status', 'state_of_origin')
         extra_kwargs = {
             'password': {'write_only': True},
         }
@@ -108,7 +108,7 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
         user = User.objects.create(email=email, user_type='manager')
         user.set_password(validated_data['password'])
         user.save()
-        manager_obj = Manager.objects.create(user=user, first_name=first_name, last_name=last_name, annual_salary=1000, phone_number=phone_number)
+        manager_obj = Manager.objects.create(user=user, first_name=first_name, last_name=last_name, annual_salary=1000, phone_number=phone_number, gender=gender, marital_status=marital_status, state_of_origin=state_of_origin)
         validated_data['user_id']=user.id
         validated_data['email']=user.email
         validated_data['user_type']='manager'
@@ -260,7 +260,7 @@ class TenantChangeSerializer(serializers.ModelSerializer):
 class ManagerChangeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Manager
-        fields = ['first_name', 'last_name', 'phone_number','permit_approval', 'photo', 'address']
+        fields = '__all__'
 
     def update(self, instance, validated_data):
         instance.photo = validated_data.get('photo', instance.photo)
@@ -269,6 +269,14 @@ class ManagerChangeSerializer(serializers.ModelSerializer):
         instance.phone_number = validated_data.get('phone_number', instance.phone_number)
         instance.address = validated_data.get('address', instance.address)
         instance.permit_approval = validated_data.get('permit_approval', instance.permit_approval)
+        instance.next_of_kin_name = validated_data.get('next_of_kin_name', instance.next_of_kin_name)
+        instance.next_of_kin_email = validated_data.get('next_of_kin_email', instance.next_of_kin_email)
+        instance.next_of_kin_number = validated_data.get('next_of_kin_number', instance.next_of_kin_number)
+        instance.state_of_origin = validated_data.get('state_of_origin', instance.state_of_origin)
+        instance.annual_salary = validated_data.get('annual_salary', instance.annual_salary)
+        instance.gender = validated_data.get('gender', instance.gender)
+        instance.marital_status = validated_data.get('marital_status', instance.marital_status)
+        instance.emergency_contact_info = validated_data.get('emergency_contact_info', instance.emergency_contact_info)
 
         instance.save()
         return instance

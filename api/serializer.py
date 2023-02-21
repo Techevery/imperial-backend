@@ -348,20 +348,24 @@ class LandlordTenantDocSerializer(serializers.ModelSerializer):
         
         return addDocument
 class ApprovePaymentSerializer(serializers.ModelSerializer):
+    user_type="landlord"
     class Meta:
         model = MakePayment
-        fields = ['status']
+        fields = ['status', 'approved_by']
+    
         
     def validate(self, attrs):
         user_data = self.context['request'].user
         if user_data.user_type=="manager":
             man=Manager.objects.get(user=user_data)
+            self.user_type="manager"
             if man.permit_approval !=True:
                 raise APIException400({"message": "Manager does not have access to approve payment"})
         return attrs
 
     def update(self, instance, validated_data):
         instance.status = validated_data.get('status', instance.status)
+        instance.approved_by = self.user_type
         instance.save()
         return instance
         

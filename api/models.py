@@ -112,6 +112,7 @@ class MakePayment(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE,null=True, blank=True)
     payment_date_and_time = models.DateTimeField(auto_now_add=True)
     approved_date = models.DateField(auto_now_add=False, auto_now=True)
+    approved_by = models.CharField(max_length=100, null=True, blank=True)
     def __str__(self):
         return self.description
         

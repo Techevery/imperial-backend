@@ -81,9 +81,9 @@ class Manager(models.Model):
     gender = models.CharField(max_length=100, null=True, blank=True, choices=GENDER)
     marital_status = models.CharField(max_length=100, null=True, blank=True, choices=MARITAL_STATUS)
     state_of_origin = models.CharField(max_length=100, null=True, blank=True)
-    next_of_kin = models.CharField(max_length=100, null=True, blank=True)
+    next_of_kin_name = models.CharField(max_length=100, null=True, blank=True)
     next_of_kin_email = models.EmailField(null=True, blank=True)
-    next_of_kin = PhoneNumberField(null=True, blank=True)
+    next_of_kin_number = PhoneNumberField(null=True, blank=True)
     emergency_contact_info = models.TextField(null=True, blank=True)
     
     class Meta():
