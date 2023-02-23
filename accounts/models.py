@@ -85,6 +85,7 @@ class Manager(models.Model):
     next_of_kin_email = models.EmailField(null=True, blank=True)
     next_of_kin_number = PhoneNumberField(null=True, blank=True)
     emergency_contact_info = models.TextField(null=True, blank=True)
+    account_status = models.BooleanField(null=True, blank=True, default=True)
     
     class Meta():
         verbose_name_plural = 'Manager'
@@ -103,6 +104,9 @@ class Tenant(models.Model):
     payment = models.ManyToManyField(AddPayment, related_name='AddPayment')
     annual_salary = models.BigIntegerField(null=True, blank=True)
     next_of_kin = models.CharField(max_length=100, null=True, blank=True)
+    next_of_kin_email = models.EmailField(null=True, blank=True)
+    next_of_kin_number = PhoneNumberField(null=True, blank=True)
+    next_of_kin_address = models.TextField(null=True, blank=True)
     state_of_origin = models.CharField(max_length=100, null=True, blank=True)
     guarantor = models.CharField(max_length=100, null=True, blank=True)
     former_address = models.TextField(null=True, blank=True)

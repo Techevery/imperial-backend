@@ -179,6 +179,14 @@ class AllProperties(APIView):
                 
             return Response(serializer.data)
             # return Response(serializer.data)
+            
+class PropertyNoManager(APIView):
+    def get(self, request):
+        if request.method == 'GET':
+            properties = Property.objects.filter(user__isnull=True)
+            serializer = PropertySerializer(properties, many=True)
+            
+            return Response(serializer.data)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])

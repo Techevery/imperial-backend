@@ -36,6 +36,8 @@ class Property(models.Model):
     address = models.TextField()
     flats = models.ManyToManyField(Flat,blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    all_managers = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='manager_list')
+    manager_vacant = models.BooleanField(null=True, blank=True, default=True)
     
 
 

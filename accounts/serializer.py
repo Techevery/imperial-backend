@@ -104,6 +104,9 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
         validated_data['password'] = raw_password
         phone_number = validated_data['phone_number']
         property = validated_data['property']
+        annual_salary=validated_data['annual_salary']
+        marital_status=validated_data['marital_status']
+        state_of_origin=validated_data['state_of_origin']
 
         user = User.objects.create(email=email, user_type='manager')
         user.set_password(validated_data['password'])
@@ -116,9 +119,11 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
             
             for prop in property:
                 manager_obj.property.add(prop)
-                house = Property.objects.get(id=prop.id)
+                house = Property.objects.filter(id=prop.id).first()
                 house.user = user
-                house.save()
+                house.all_managers.add(user)
+                house.manager_vacant=False
+                house.save(update_fields=['vacant', 'user'])
         
         return validated_data
 
@@ -173,7 +178,7 @@ class TenantCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tenant
-        fields = ('email', 'first_name', 'last_name','user_type', 'phone_number', 'property', 'flat', 'payment', 'next_of_kin', 'former_address')
+        fields = ('email', 'first_name', 'last_name','user_type', 'phone_number', 'property', 'flat', 'payment', 'next_of_kin', 'former_address','next_of_kin_email', 'next_of_kin_number', 'next_of_kin_address')
         extra_kwargs = {
             'password': {'write_only': True},
         }
@@ -211,11 +216,16 @@ class TenantCreateSerializer(serializers.ModelSerializer):
         property = validated_data['property']
         flat = validated_data['flat']
         phone_number = validated_data['phone_number']
+        next_of_kin=validated_data['next_of_kin']
+        former_address=validated_data['former_address']
+        next_of_kin_email=validated_data['next_of_kin_email']
+        next_of_kin_number=validated_data['next_of_kin_number']
+        next_of_kin_address=validated_data['next_of_kin_address']
         payments_data = validated_data.pop('payment')
         user = User.objects.create(email=email, user_type='tenant')
         user.set_password(validated_data['password'])
         user.save()
-        tenant_obj = Tenant.objects.create(user=user, first_name=first_name, last_name=last_name, flat=flat, property=property, phone_number=phone_number, next_of_kin=next_of_kin, former_address=former_address)
+        tenant_obj = Tenant.objects.create(user=user, first_name=first_name, last_name=last_name, flat=flat, property=property, phone_number=phone_number, next_of_kin=next_of_kin, former_address=former_address, next_of_kin_email=next_of_kin_email, next_of_kin_number=next_of_kin_number,next_of_kin_address=next_of_kin_address)
         validated_data['user_id'] = user.id
         validated_data['email'] = user.email
         validated_data['user_type'] = 'tenant'
@@ -352,6 +362,63 @@ class ActivateTenantSerializer(serializers.ModelSerializer):
             vacancy.save(update_fields=['current_tenant', 'vacant'])
         else:
             raise APIException400({"message": "A Tenant is currently occupying this flat"})
+        instance.save()
+
+        return instance
+        
+class DeactivateManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manager
+        fields=['user','account_status']
+
+    def update(self, instance, validated_data):
+        instance.account_status = validated_data.get('account_status', instance.account_status)
+        #instance.property=validated_data.get('property', instance.property)
+        instance.user=validated_data.get('user', instance.user)
+        #ten=Tenant.objects.get(flat=instance.flat)
+        prop_id=self.context.get('request').parser_context.get('kwargs').get(
+        'prop_id')
+        prop=Property.objects.filter(id=prop_id).first()
+        if instance.account_status==False:
+            if Property.objects.filter(user=instance.user).exists():
+                prop_prop=Property.objects.filter(user=instance.user).first()
+                prop_prop.user=None
+                prop_prop.manager_vacant=True
+                prop_prop.save(update_fields=['user', 'manager_vacant'])
+            else:
+                raise APIException400({"message": "Manager is not currently activated"})
+        elif instance.account_status==True:
+            vacancy = Property.objects.filter(id=prop_id, manager_vacant=True).first()
+            if vacancy:
+                vacancy.user=instance.user
+                vacancy.manager_vacant=False
+                vacancy.save(update_fields=['user', 'manager_vacant'])
+            else:
+                raise APIException400({"message": "A Manager is currently in charge of this property"})
+            
+        instance.save()
+
+        return instance
+        
+class ActivateManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manager
+        fields=['user','account_status','property']
+
+    def update(self, instance, validated_data):
+        instance.account_status = validated_data.get('account_status', instance.account_status)
+        instance.property=validated_data.get('property', instance.property)
+        instance.user=validated_data.get('user', instance.user)
+        #ten=Tenant.objects.get(flat=instance.flat)
+        prop=Property.objects.filter(property_name=instance.property, user=instance).first()
+        a=prop.id
+        vacancy = Property.objects.filter(id=a, manager_vacant=True).first()
+        if vacancy:
+            vacancy.user=instance.user
+            vacancy.manager_vacant=False
+            vacancy.save(update_fields=['user', 'manager_vacant'])
+        else:
+            raise APIException400({"message": "A Manager is currently in charge this property"})
         instance.save()
 
         return instance

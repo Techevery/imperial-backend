@@ -1,6 +1,6 @@
 from django.urls import path
 from .api import RegisterApi
-from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView, UpdateManagerView, UpdateLandlordView, UpdateManagerPermission, DeactivateTenantView,ReactivateTenantView, ChangePasswordView
+from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView, UpdateManagerView, UpdateLandlordView, UpdateManagerPermission, DeactivateTenantView,ReactivateTenantView,DeactivateManagerView, ChangePasswordView
 
 urlpatterns = [
       
@@ -15,5 +15,6 @@ urlpatterns = [
       path('approve-manager/<int:id>', UpdateManagerPermission.as_view()),
       path('deactivate-tenant/<int:id>', DeactivateTenantView.as_view()),
       path('reactivate-tenant/<int:id>', ReactivateTenantView.as_view()),
+      path('deactivate-manager/<int:id>/prop/<int:prop_id>', DeactivateManagerView.as_view()),
       path('change-password', ChangePasswordView.as_view(), name='change-password')
 ]

@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi,EditProperty,EditFlatProp, CurrentUserView, managers_list,UserManager,UserLandlord, TenantList, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView,ExpensesFlatView,ManagerExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles,TenantDocdelete, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles,LandlordManagerFiles, TenantPaymentUpdate, TenantDetails,TenantPaymentView, MakePaymentView,PaySalaryView,ViewSalary,LandlordViewSalary,ApproveSalary, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment, AllProperties, TenantViewLandlord, AssignedAccList, TestView
+from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi,EditProperty,EditFlatProp, CurrentUserView, managers_list,UserManager,UserLandlord, TenantList, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView,ExpensesFlatView,ManagerExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles,TenantDocdelete, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles,LandlordManagerFiles, TenantPaymentUpdate, TenantDetails,TenantPaymentView, MakePaymentView,PaySalaryView,ViewSalary,LandlordViewSalary,ApproveSalary, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment, AllProperties,PropertyNoManager, TenantViewLandlord, AssignedAccList, TestView
 
 urlpatterns = [
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path('display', views.show, name='show'),
     path('add', views.add_property),
     path('all-properties', AllProperties.as_view()),
+    path('property/no-manager', PropertyNoManager.as_view()),
     path('edit-property/<int:id>', EditProperty.as_view()),
     path('edit-flat-property/<int:id>', EditFlatProp.as_view()),
     path('get-property/<int:id>', views.property_detail),
