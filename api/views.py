@@ -587,9 +587,9 @@ class ManagerExpensesView(APIView):
     def get(self, request, id):
         user_info = request.user
         if user_info.user_type == 'manager':
-            expenses = AddExpenses.objects.filter(user=id)
+            expenses = AddExpenses.objects.filter(house=id)
         else:
-            expenses = AddExpenses.objects.filter(user=id)
+            expenses = AddExpenses.objects.filter(house=id)
         if request.method == 'GET':
             serializer = AddExpensesserializer(expenses, many=True)
             total = 0

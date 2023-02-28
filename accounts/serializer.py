@@ -104,14 +104,14 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
         validated_data['password'] = raw_password
         phone_number = validated_data['phone_number']
         property = validated_data['property']
-        annual_salary=validated_data['annual_salary']
         marital_status=validated_data['marital_status']
         state_of_origin=validated_data['state_of_origin']
+        gender=validated_data['gender']
 
         user = User.objects.create(email=email, user_type='manager')
         user.set_password(validated_data['password'])
         user.save()
-        manager_obj = Manager.objects.create(user=user, first_name=first_name, last_name=last_name, annual_salary=1000, phone_number=phone_number, gender=gender, marital_status=marital_status, state_of_origin=state_of_origin)
+        manager_obj = Manager.objects.create(user=user, first_name=first_name, last_name=last_name, phone_number=phone_number, gender=gender, marital_status=marital_status, state_of_origin=state_of_origin)
         validated_data['user_id']=user.id
         validated_data['email']=user.email
         validated_data['user_type']='manager'
@@ -123,7 +123,7 @@ class ManagerCreateSerializer(serializers.ModelSerializer):
                 house.user = user
                 house.all_managers.add(user)
                 house.manager_vacant=False
-                house.save(update_fields=['vacant', 'user'])
+                house.save(update_fields=['manager_vacant', 'user'])
         
         return validated_data
 
@@ -380,8 +380,10 @@ class DeactivateManagerSerializer(serializers.ModelSerializer):
         'prop_id')
         prop=Property.objects.filter(id=prop_id).first()
         if instance.account_status==False:
-            if Property.objects.filter(user=instance.user).exists():
-                prop_prop=Property.objects.filter(user=instance.user).first()
+            if Property.objects.filter(id=prop_id, user=instance.user).exists():
+                prop_prop=Property.objects.filter(id=prop_id, user=instance.user).first()
+                manager_prop=Manager.objects.filter(user=instance.user).first()
+                manager_prop.property.remove(prop_prop)
                 prop_prop.user=None
                 prop_prop.manager_vacant=True
                 prop_prop.save(update_fields=['user', 'manager_vacant'])
@@ -390,6 +392,8 @@ class DeactivateManagerSerializer(serializers.ModelSerializer):
         elif instance.account_status==True:
             vacancy = Property.objects.filter(id=prop_id, manager_vacant=True).first()
             if vacancy:
+                manager_prop=Manager.objects.filter(user=instance.user).first()
+                manager_prop.property.add(vacancy)
                 vacancy.user=instance.user
                 vacancy.manager_vacant=False
                 vacancy.save(update_fields=['user', 'manager_vacant'])

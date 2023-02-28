@@ -73,7 +73,7 @@ class Manager(models.Model):
     last_name = models.CharField(max_length=100, null=True, blank=True)
     photo = models.ImageField(blank=True, null=True, upload_to='uploads/manager-pictures')
     address= models.TextField(null=True, blank=True)
-    annual_salary = models.BigIntegerField()
+    annual_salary = models.BigIntegerField(null=True, blank=True)
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     property = models.ManyToManyField(Property, blank=True)
     permit_approval = models.BooleanField(null=True,blank=True,default=False)
