@@ -76,6 +76,10 @@ class PropertySerializer(serializers.ModelSerializer):
             flat=Flat.objects.create(property=property, **flat_data, test_id=property.id)
             property.flats.add(flat)
             
+        return property
+            
+            
+            
     
         
 class UserSerializer(serializers.ModelSerializer):
