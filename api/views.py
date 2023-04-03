@@ -36,7 +36,20 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
             return token
 
+def home(request):
+    return render(request, "home.html")
 
+def manager_web(request):
+    return render(request, "tables.html")
+
+def property_web(request):
+    return render(request, "properties.html")
+
+def manager_detail_web(request):
+    return render(request, "billing.html")
+
+def property_detail_web(request):
+    return render(request, "property_detail.html")
 
 
 

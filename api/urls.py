@@ -5,6 +5,8 @@ from rest_framework_simplejwt.views import (
 from django.urls import path
 from . import views
 from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi,EditProperty,EditFlatProp, CurrentUserView, managers_list,UserManager,UserLandlord, TenantList, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView,ExpensesFlatView,ManagerExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles,TenantDocdelete, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles,LandlordManagerFiles, TenantPaymentUpdate, TenantDetails,TenantPaymentView, MakePaymentView,PaySalaryView,ViewSalary,LandlordViewSalary,ApproveSalary, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment, AllProperties,PropertyNoManager, TenantViewLandlord, AssignedAccList, TestView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -13,6 +15,11 @@ urlpatterns = [
     path('login/tenant', MyTokenObtainPairView3.as_view(), name='token_obtain_pair3'),
     path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('display', views.show, name='show'),
+    path('home', views.home, name="home-web"),
+    path('manager/web', views.manager_web, name='manager-web'),
+    path('manager/detail/web', views.manager_detail_web, name='manager-detail-web'),
+    path('property/detail/web', views.property_detail_web, name='property-detail-web'),
+    path('property/web', views.property_web, name='property-web'),
     path('add', views.add_property),
     path('all-properties', AllProperties.as_view()),
     path('property/no-manager', PropertyNoManager.as_view()),
@@ -67,3 +74,6 @@ urlpatterns = [
     path('assigned/accounts', AssignedAccList.as_view()),
     path('test', TestView.as_view())
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
