@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.views import LoginView, LogoutView
 from .models import User
 from .forms import CustomUserForm
 from django.views.generic import CreateView
@@ -6,14 +7,21 @@ from django.urls import reverse_lazy
 from .serializer import *
 from django.core.mail import send_mail
 from accounts.send_password import send_text
-
-
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
+from django.contrib import messages
 from rest_framework.exceptions import APIException
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView, UpdateAPIView
+import requests
+from datetime import datetime, timedelta
+
+import json
+from django.http import HttpResponse
+from django.utils import timezone
 
 # Create your views here.
 class SignUp(CreateView):
@@ -21,6 +29,67 @@ class SignUp(CreateView):
     success_url = reverse_lazy('sample')
     template_name = 'registration/signup.html'
 
+class LoginView(LoginView):
+    redirect_authenticated_user = True
+    template_name = 'registration/login.html'
+    #form_class = LoginForm
+    #success_url = reverse_lazy('home-web')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        # Get the username and password from the form data
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+
+        # Make a POST request to the API endpoint with the login credentials
+        api_url = 'https://mperial.techevery.ng/api/login/landlord'
+        api_response = requests.post(api_url, data={'email': username, 'password': password})
+
+        if api_response.status_code == 200:
+            # Save the access and refresh tokens to cookies
+            data = api_response.json()
+            access_token = data['access']
+            refresh_token = data['refresh']
+            expires = 86400  # Token expiry time in seconds (1 day)
+
+            # Set cookies for access_token and refresh_token
+            response.set_cookie('access_token', access_token, max_age=expires)
+            response.set_cookie('refresh_token', refresh_token, max_age=expires)
+
+        return response
+    '''def form_invalid(self, form):
+        response = super().form_invalid(form)
+        messages.error(self.request, 'Invalid login credentials')
+        return response
+    def form_invalid(self, form):
+        return render(self.request, self.template_name, {'form': form})'''
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        form.errors.clear()
+        form.add_error('username', 'Invalid email or password')
+        return response
+    def get_success_url(self):
+        return reverse_lazy('home-web')
+        
+    
+
+
+
+
+
+
+
+class CustomLogoutView(LogoutView):
+    next_page = '/'
+
+    def dispatch(self, request, *args, **kwargs):
+        response = super().dispatch(request, *args, **kwargs)
+        # Delete the access and refresh tokens from the cookie
+        response.delete_cookie('access_token')
+        response.delete_cookie('refresh_token')
+        return response
+        
 class LandlordCreateAPIView(CreateAPIView):
     serializer_class = LandlordCreateSerializer
     permission_classes = [AllowAny]

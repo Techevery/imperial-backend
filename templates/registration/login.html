@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+        input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #8A8787;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2px 1px #8A8787;
+}
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border: 1px solid #8A8787;
+    box-shadow: 0px 0px 5px 1px #8A8787;
+}
+
+            .btn{
+                background-color: #016726 !important;
+            }
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    background-color: #002F5B;
+}
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    padding: 60px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+
+        </style>
+    </head>
+    <body>
+        {% extends 'main.html' %}
+
+{%block content%}
+{% if form.errors %}
+<div class="alert alert-danger" role="alert">
+    <ul>
+    {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+        <li>{{ field }}: {{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+  <div class="center">
+	  <form id="login-form" method="post" class="card" novalidate>
+	  	{% csrf_token %}
+	    <h2 class="text-center">Log in to your account</h2>
+		{% for field in form %}
+	    		{{ field.label_tag }} 
+	        	{{ field }}
+	        	{% if field.errors %}
+	        		<small>{{ field.errors|striptags }}</small> 
+	        	{% endif %}
+		{% endfor %}
+		
+		<input type="submit" value="Login" class="btn btn-primary full-width">
+		<hr>
+		<p class="text-center">Forgot your password <a href="#">Reset Password</a></p>
+		<p class="text-center">Don't have a account? <a href="#">Join Now</a></p>
+	</form>
+</div>
+
+
+
+{%endblock content%}
+
+
+
+
+    </body>
+</html>
+

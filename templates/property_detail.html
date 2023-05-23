@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+
 <div class="container-fluid px-2 px-md-4">
-      <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('https://nairametrics.com/wp-content/uploads/2021/05/Real-Estate-2.jpg?resize=750,375" class="d-block w-100" alt="First Slide');">
+      <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('{{ props.property_image }}');" class="d-block w-100" alt="First Slide">
+
         <span class="mask  bg-gradient-primary  opacity-6"></span>
       </div>
       <div class="card card-body mx-3 mx-md-4 mt-n6">
@@ -15,7 +18,7 @@
           <div class="col-auto my-auto">
             <div class="h-100">
               <h5 class="mb-1">
-                Richard Davis
+                {{ manager.first_name }} {{ manager.last_name }}
               </h5>
               <p class="mb-0 font-weight-normal text-sm">
                 Manager
@@ -52,7 +55,7 @@
             <div class="col-12 col-xl-4">
               <div class="card card-plain h-100">
                 <div class="card-header pb-0 p-3">
-                  <h6 class="mb-0">Property</h6>
+                  <h6 class="mb-0">{{ property }}</h6>
                 </div>
                 <div class="card-body p-3">
                   <h6 class="text-uppercase text-body text-xs font-weight-bolder">Account</h6>
@@ -65,7 +68,7 @@
                     </li>
                     <li class="list-group-item border-0 px-0">
                       <div class="form-check form-switch ps-0">
-                        <button type="button" class="btn btn-dark">Remove Manager</button>
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#remove-manager">Remove Manager</button>
                       </div>
                     </li>
                     <li class="list-group-item border-0 px-0">
@@ -80,6 +83,25 @@
                         <button type="button" class="btn btn-dark">Add Flat</button>
                       </div>
                   </li>
+                  <!-- Modal -->
+<div class="modal fade" id="remove-manager" tabindex="-1" aria-labelledby="remove-manager-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="remove-manager-label">Remove Manager</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to remove this manager?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
                   <!--
                   
                   <h6 class="text-uppercase text-body text-xs font-weight-bolder mt-4">Application</h6>
@@ -127,9 +149,9 @@
                   <hr class="horizontal gray-light my-4">
                   <ul class="list-group">
                       <p>Manager Details</p>
-                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; Richard V. David</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; (234) 123 34 123</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; richard@mail.com</li>
+                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; {{ manager.first_name }} {{ manager.last_name }}</li>
+                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; {{ manager.phone_number}}</li>
+                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ manager.user }}</li>
                     <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong> &nbsp; Nigeria</li>
                     <li class="list-group-item border-0 ps-0 pb-0">
                       <strong class="text-dark text-sm">Social:</strong> &nbsp;
@@ -154,60 +176,29 @@
                 </div>
                 <div class="card-body p-3">
                   <ul class="list-group">
+                      {% for flat_user in flat_users %}
                     <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
                       <div class="avatar me-3">
-                        <img src="{% static 'pictures/team-3.jpg' %}">
+                          {% if flat_user.photo %}
+                        <img src="{{ flat_user.photo.url }}" class="border-radius-lg shadow">
+                        {% else %}
+                        <img src="{% static 'pictures/team-3.jpg' %}" class="border-radius-lg shadow">
+                        {% endif %}
+                        
                       </div>
                       <div class="d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Sophie B.</h6>
-                        <p class="mb-0 text-xs">Flat Annex</p>
+                        <h6 class="mb-0 text-sm">{{ flat_user.first_name }}</h6>
+                        <p class="mb-0 text-xs">{{ flat_user.flat }}</p>
                       </div>
                       <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">View</a>
                     </li>
-                    <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                      <div class="avatar me-3">
-                        <img src="{% static 'pictures/team-3.jpg' %}">
-                      </div>
-                      <div class="d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Anne Marie</h6>
-                        <p class="mb-0 text-xs">Flat B</p>
-                      </div>
-                      <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">View</a>
-                    </li>
-                    <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                      <div class="avatar me-3">
-                        <img src="{% static 'pictures/team-2.jpg' %}" alt="kal" class="border-radius-lg shadow">
-                      </div>
-                      <div class="d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Ivanna</h6>
-                        <p class="mb-0 text-xs">Duplex</p>
-                      </div>
-                      <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">View</a>
-                    </li>
-                    <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                      <div class="avatar me-3">
-                        <img src="{% static 'pictures/team-4.jpg' %}" alt="kal" class="border-radius-lg shadow">
-                      </div>
-                      <div class="d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Peterson</h6>
-                        <p class="mb-0 text-xs">Boys Quarter</p>
-                      </div>
-                      <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">View</a>
-                    </li>
-                    <li class="list-group-item border-0 d-flex align-items-center px-0">
-                      <div class="avatar me-3">
-                        <img src="../assets/img/team-3.jpg" alt="kal" class="border-radius-lg shadow">
-                      </div>
-                      <div class="d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Nick Daniel</h6>
-                        <p class="mb-0 text-xs">Annex</p>
-                      </div>
-                      <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">View</a>
-                    </li>
+                    {% endfor %}
+                    
                   </ul>
                 </div>
               </div>
             </div>
+            <!--
             <div class="col-12 mt-4">
               <div class="mb-5 ps-3">
                 <h6 class="mb-1">Vacant Flats</h6>
@@ -366,6 +357,25 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
+    
+    <script>
+  $(function() {
+    $('#remove-manager .btn-danger').click(function() {
+      $.ajax({
+        url: 'https://mperial.techevery.ng/accounts/deactivate-manager/2/prop/0',
+        type: 'PATCH',
+        data: JSON.stringify({ account_status: false }),
+        contentType: 'application/json',
+        success: function(response) {
+          console.log('Manager deactivated successfully');
+        },
+        error: function(xhr, status, error) {
+          console.log('Error deactivating manager: ' + error);
+        }
+      });
+    });
+  });
+</script>
 {% endblock content %}

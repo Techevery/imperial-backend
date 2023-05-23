@@ -1,11 +1,14 @@
 from django.urls import path
 from .api import RegisterApi
-from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView, UpdateManagerView, UpdateLandlordView, UpdateManagerPermission, DeactivateTenantView,ReactivateTenantView,DeactivateManagerView, ChangePasswordView
+from django.contrib.auth.views import LogoutView
+from .views import SignUp, LandlordCreateAPIView, ManagerCreateAPIView, TenantCreateAPIView, UpdateTenantView, UpdateManagerView, UpdateLandlordView, UpdateManagerPermission, DeactivateTenantView,ReactivateTenantView,DeactivateManagerView, ChangePasswordView, LoginView, CustomLogoutView
 
 urlpatterns = [
       
       path('api/register', RegisterApi.as_view()),
       path('signup', SignUp.as_view()),
+      path('login/', LoginView.as_view(),name='login'),
+      path('logout/', CustomLogoutView.as_view(next_page='login'),name='logout'),
       path('landlord_register', LandlordCreateAPIView.as_view(), name='landlord_register'),
       path('manager_register', ManagerCreateAPIView.as_view(), name='manager_register'),
       path('tenant_register', TenantCreateAPIView.as_view(), name='manager_register'),

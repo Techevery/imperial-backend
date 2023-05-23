@@ -1,16 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form method="post">
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% if property.id %}Update{% else %}Create{% endif %} Property</h1>
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ property_form.as_p }}
-    <input type="submit" value="save" >
-</form>
+    <div class="form-group">
+      {{ form.property_image.label_tag }}
+      {{ form.property_image }}
+    </div>
+    <div class="form-group">
+      {{ form.property_name.label_tag }}
+      {{ form.property_name }}
+    </div>
+    <div class="form-group">
+      {{ form.address.label_tag }}
+      {{ form.address }}
+    </div>
+    <div class="form-group">
+      {{ form.flats.label_tag }}
+      <br>
+      <a href="#" data-toggle="modal" data-target="#add-flat-modal">{{ form.new_flat.value }}</a>
+      {{ form.flats.errors }}
+    </div>
+    <div class="form-group">
+      {{ form.user.label_tag }}
+      {{ form.user }}
+    </div>
+    <div class="form-group">
+      {{ form.all_managers.label_tag }}
+      {{ form.all_managers }}
+    </div>
+    <div class="form-group">
+      {{ form.manager_vacant.label_tag }}
+      {{ form.manager_vacant }}
+    </div>
+    <button type="submit" class="btn btn-primary">{% if property.id %}Update{% else %}Create{% endif %}</button>
+  </form>
 
+  <!-- Modal for adding a new flat -->
+  <div class="modal fade" id="add-flat-modal" tabindex="-1" role="dialog" aria-labelledby="add-flat-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-flat-modal-label">Add Flat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" id="add-flat-form">
+          {% csrf_token %}
+          <div class="modal-body">
+            {{ form.flat_form.as_p }}
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-</body>
-</html>
+  <script>
+    $(document).ready(function() {
+      $('#add-flat-form').submit(function(event) {
+        event.preventDefault();
+        var form = $(this);
+        var url = form.attr('action');
+        var formData = form.serialize();
+        $.ajax({
+          url: url,
+          type: 'post',
+          data: formData,
+          success: function(data) {
+            $('#id_flats').append('<option value="' + data.id + '" selected>' + data.name + '</option>');
+            $('#add-flat-modal').modal('hide');
+          },
+          error: function(xhr, status, error) {
+            $('#add-flat-form .modal-body').html(xhr.responseText);
+          }
+        });
+      });
+    });
+  </script>
+
+{% endblock content %}

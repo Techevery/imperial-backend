@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Detail Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-uc6UUDQ0iKZ0nzNTZ14pggZxhM/BHve0dWIfYz+v/EcH0VBG+/6+fC5Z5a5QeeMGxRpK0bsrAh7YoyyE3e3MYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Properties</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
+        </ul>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <button type="button" class="btn btn-warning">Sign-up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="https://picsum.photos/800/600" alt="Property Image" class="img-fluid mb-4">
+        <h1 class="mb-4">Spacious Apartment in the Heart of the City</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lacinia sapien. Duis sed est eget mi eleifend fringilla. Pellentesque sed bibendum felis. Morbi vel ante eget nulla vulputate cursus. Integer lacinia urna in metus posuere interdum. Sed euismod augue sit amet lorem pharetra, vel eleifend mauris rutrum.</p>
+        <p class="mb-4">Cras et arcu vel ante convallis hendrerit. Proin pharetra tellus lacus, in convallis arcu dictum sit amet. Donec vel mollis turpis, non ullamcorper risus. Sed non nulla non mi faucibus luctus eu ut sapien. Nullam vulputate, elit at iaculis aliquam, est velit commodo sem, vel luctus justo magna sit amet risus. Nam ac    sapien quis felis elementum varius at et lectus. Suspendisse imperdiet eleifend metus, vel consectetur dolor ullamcorper sit amet. Aliquam erat volutpat. Integer fringilla, libero eu ultrices pharetra, elit elit ultrices elit, eu iaculis libero ipsum vel enim. </p>
+    <h2>Property Details</h2>
+    <ul>
+      <li>Location: Downtown</li>
+      <li>Price: $500,000</li>
+      <li>Size: 1500 sq. ft.</li>
+      <li>Bedrooms: 2</li>
+      <li>Bathrooms: 2</li>
+      <li>Parking: 1</li>
+      <li>Year Built: 2015</li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3>Contact Agent</h3>
+        <form>
+          <div class="form-group mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="form-group mb-3">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" placeholder="Enter your phone number">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h3>Related Properties</h3>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Luxury Condo</a></li>
+          <li class="list-group-item"><a href="#">Beach House</a></li>
+          <li class="list-group-item"><a href="#">Mountain Chalet</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

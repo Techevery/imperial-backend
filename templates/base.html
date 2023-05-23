@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
-    Property Management 
+    Landlord
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -23,22 +23,7 @@
  <!-- <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" /> -->
   <link href="{% static 'css/material-dashboard.css' %}"  rel="stylesheet">
   <script>
-      fetch('https://mperial.techevery.ng/api/login/landlord', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    email: 'toluiwal@gmail.com',
-    password: 'tolu2017'
-  })
-})
-.then(response => response.json())
-.then(data => {
-  // save the token in local storage
-  localStorage.setItem('access_token', JSON.stringify(data));
-  console.log(data.access)
-});
+  
 
   </script>
 </head>
@@ -133,7 +118,7 @@
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Log out</a>
+        <a class="btn bg-gradient-primary mt-4 w-100" href="{% url 'logout' %}" type="button">Log out</a>
       </div>
     </div>
   </aside>
@@ -562,6 +547,8 @@
     });
   </script>
   <script>
+  
+ 
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
@@ -569,14 +556,107 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+    
+    // helper function to get cookie by name
+function getCookie(name) {
+  const cookieString = document.cookie;
+  const cookies = cookieString.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(`${name}=`)) {
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return null;
+}
+const tok = getCookie('refresh_token');
+console.log(tok)
+
+// helper function to set cookie
+function setCookie(name, value) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000)); // 1 day in milliseconds
+  document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/`;
+}
+
+    
+    
+function refreshToken() {
+  // get refresh token from cookies
+  const refreshToken = getCookie('refresh_token');
+  console.log(refreshToken)
+  
+  // make request to refresh token endpoint
+  fetch('https://mperial.techevery.ng/api/token/refresh', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      refresh: refreshToken
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      // redirect user to logout page if refresh request fails
+      window.location.replace('https://mperial.techevery.ng/accounts/logout');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // save new tokens to cookies
+    setCookie('access_token', data.access);
+    setCookie('refresh_token', data.refresh);
+    console.log(data.access);
+    console.log(data.access === getCookie('access_token')); // logs true if the access token returned from the API is equal to the one stored in the cookie, false otherwise
+    console.log(getCookie('access_token'))
+    
+  })
+  .catch(error => console.error(error));
+}
+
+// call refreshToken function every 1 minute
+setInterval(refreshToken, 240000);
+
+
+
+let getProfile = async () => {
+  try {
+    let access = getCookie('access_token');
+    let response = await fetch('https://mperial.techevery.ng/api/user-details', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + String(access)
+      }
+    });
+    let data = await response.json();
+
+    if (response.status === 200) {
+      
+      console.log(data);
+      conole.log(data.data)
+    } else if (response.statusText === 'Unauthorized') {
+      window.location.replace('https://mperial.techevery.ng/accounts/logout');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+getProfile();
+
+
+
+
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{% static 'js/material-dashboard.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="{% static 'js/material-dashboard.min.js' %}"></script>
 
 
 
