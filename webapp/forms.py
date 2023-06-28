@@ -1,8 +1,11 @@
 from django import forms
 from api.models import Property, Flat
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+from django.contrib.auth.models import User
+from django.forms import ModelMultipleChoiceField
+from django.contrib.auth import get_user_model
 
-from django import forms
-from api.models import Property, Flat
 
 class FlatForm(forms.ModelForm):
     class Meta:
@@ -14,13 +17,12 @@ class FlatForm(forms.ModelForm):
             'number_of_kitchens',
             'number_of_toilets',
             'description',
-            'test_id',
-            'current_tenant',
-            'all_tenants',
-            'vacant',
         ]
 
 class PropertyForm(forms.ModelForm):
+    new_flat = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    flat_form = FlatForm()
+
     class Meta:
         model = Property
         fields = [
@@ -35,9 +37,6 @@ class PropertyForm(forms.ModelForm):
         widgets = {
             'flats': forms.CheckboxSelectMultiple,
         }
-
-    new_flat = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))
-    flat_form = FlatForm()
 
     def __init__(self, *args, **kwargs):
         super(PropertyForm, self).__init__(*args, **kwargs)
@@ -59,4 +58,28 @@ class PropertyForm(forms.ModelForm):
             return flat_name
         raise forms.ValidationError('Flat with this name already exists.')
 
+
+User = get_user_model()
+
+
+class FlatForm(forms.ModelForm):
+    #current_tenant = forms.ModelChoiceField(queryset=User.objects.all(), required=False)
+    #all_tenants = ModelMultipleChoiceField(queryset=User.objects.all(), required=False)
+
+    class Meta:
+        model = Flat
+        fields = [
+            'name',
+            'number_of_rooms',
+            'number_of_living_rooms',
+            'number_of_kitchens',
+            'number_of_toilets',
+            'description',
+        ]
+    '''def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.template_pack = 'bootstrap5'
+        self.helper.add_input(Submit('submit', 'Save', css_class='btn-primary'))'''
 

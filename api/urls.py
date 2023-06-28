@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
 )
 from django.urls import path
 from . import views
-from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi,EditProperty,EditFlatProp, CurrentUserView, managers_list,UserManager,UserLandlord, TenantList, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi, AccountView, ExpensesView,ExpensesFlatView,ManagerExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles,TenantDocdelete, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles,LandlordManagerFiles, TenantPaymentUpdate, TenantDetails,TenantPaymentView, MakePaymentView,PaySalaryView,ViewSalary,LandlordViewSalary,ApproveSalary, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment, AllProperties,PropertyNoManager, TenantViewLandlord, AssignedAccList, TestView
+from .views import MyTokenObtainPairView, MyTokenObtainPairView2, MyTokenObtainPairView3, MyTokenObtainPairSerializer,show, add_property, PropertyCreateApi,EditProperty,EditFlatProp, CurrentUserView, managers_list,UserManager,UserLandlord, TenantList, tenants_list_manager, AddAccountCreateApi, AssignAccountCreateApi, AddExpensesCreateApi,ApproveExpenseAPIView, AccountView, ExpensesView,ExpensesFlatView,ManagerExpensesView, ManagerProperty, AddDocumentCreateApi, LandlordDocumentCreateApi, LandlordTenantDocCreateApi, ManagerFiles, ManagerDocumentCreateApi, ManagerDocumentView,TenantMyFilesCreateApi, TenantDocument, TenantFiles,TenantDocdelete, LandlordTenantFiles,LandlordTenantMyFiles,LandlordManagerMyFiles,LandlordManagerFiles, TenantPaymentUpdate, TenantDetails,TenantPaymentView, MakePaymentView,PaySalaryView,ViewSalary,LandlordViewSalary,ApproveSalary, ViewPayment,ViewTenantPayment, PageView, ManagerProp, LandlordProperty,ApprovePayment, AllProperties,PropertyNoManager, TenantViewLandlord, AssignedAccList, TestView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -41,6 +41,7 @@ urlpatterns = [
     path('account-list', AccountView.as_view()),
     path('expenses', ExpensesView.as_view()),
     path('expenses/flat/<int:id>',ExpensesFlatView.as_view()),
+    path('expenses/<int:pk>/approve', ApproveExpenseAPIView.as_view(), name='approve-expense'),
     path('expenses/manager/<int:id>',ManagerExpensesView.as_view()),
     path('manager-property/<int:id>', ManagerProperty.as_view()),
     path('tenant/add-document', AddDocumentCreateApi.as_view()),

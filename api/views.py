@@ -17,6 +17,7 @@ from .serializer import *
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import generics
 from rest_framework.generics import CreateAPIView,ListAPIView,RetrieveAPIView,UpdateAPIView
 from accounts.models import Manager, Tenant, LandLord
 from accounts.serializer import *
@@ -570,7 +571,7 @@ class ExpensesView(APIView):
         else:
             expenses = AddExpenses.objects.all()
         if request.method == 'GET':
-            serializer = AddExpensesserializer(expenses, many=True)
+            serializer = ExpensesSerializer(expenses, many=True)
             total = 0
             for i in serializer.data:
                 total = total + i['amount']
@@ -578,6 +579,22 @@ class ExpensesView(APIView):
             return Response({'data':serializer.data,
                              'total': total
                              })
+                             
+class ApproveExpenseAPIView(generics.UpdateAPIView):
+    queryset = AddExpenses.objects.all()
+    serializer_class = ExpensesSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def perform_update(self, serializer):
+        expense_id = self.kwargs['pk']
+        expense = get_object_or_404(AddExpenses, pk=expense_id)
+        if expense.approved_status:
+            return Response({'message': 'Expense has already been approved.'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            current_datetime = datetime.now()
+            current_date = current_datetime.date()  # Extract the date portion from the current date/time
+            serializer.save(approved_date=current_date, approved_status=True)
+            return Response({'message': 'Expense has been approved.'}, status=status.HTTP_200_OK)
 
 class ExpensesFlatView(APIView):
     def get(self, request, id):
@@ -604,7 +621,7 @@ class ManagerExpensesView(APIView):
         else:
             expenses = AddExpenses.objects.filter(house=id)
         if request.method == 'GET':
-            serializer = AddExpensesserializer(expenses, many=True)
+            serializer = ExpensesSerializer(expenses, many=True)
             total = 0
             for i in serializer.data:
                 total = total + i['amount']

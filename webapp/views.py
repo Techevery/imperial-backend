@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from api.models import Property, MakePayment, Flat
 from accounts.models import  Manager, Tenant
 import requests
@@ -10,6 +10,7 @@ from api.models import Flat, Property
 from .forms import PropertyForm, FlatForm
 
 
+
 # Create your views here.
 User = get_user_model()
 
@@ -18,7 +19,8 @@ def add_property(request):
         form = PropertyForm(request.POST, request.FILES)
         if form.is_valid():
             property = form.save(commit=False)
-            property.user = request.user
+            #property.user = request.user
+            property.manager_vacant = False
             property.save()
 
             # Save selected flats
@@ -261,4 +263,24 @@ def property_detail_web(request, id):
 
 def prop_info(request):
     return render(request, "property_info.html")
+    
+
+def flat_create(request, id):
+    property = get_object_or_404(Property, id=id)
+    param = id
+
+    if request.method == 'POST':
+        form = FlatForm(request.POST)
+        if form.is_valid():
+            flat = form.save(commit=False)
+            flat.test_id = param
+            flat.save()
+            property.flats.add(flat)  # Add the created flat to the property's flat field
+            return redirect('property-detail', id=param)  # Replace 'home-web' with the desired URL name or path to redirect after successful form submission
+    else:
+        form = FlatForm()
+    
+    return render(request, 'flat_create.html', {'form': form})
+    
+
     

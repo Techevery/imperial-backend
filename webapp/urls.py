@@ -10,6 +10,7 @@ urlpatterns =[
     path('manager/detail/web/<int:id>', views.manager_detail_web, name='manager-detail'),
     path('tenant/detail/web/<int:id>', views.tenant_detail_web, name='tenant-detail-web'),
     path('property/detail/<int:id>', views.property_detail_web, name='property-detail'),
+    path('flat/add/<int:id>', views.flat_create, name='add_flat'),
     path('property/web', views.property_web, name='property-web'),
     path('property/info', views.prop_info, name='prop-info'),
     path('payment/web', views.payments_web, name='payment-web'),

@@ -88,7 +88,8 @@ class AddExpenses(models.Model):
     tenant = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name="tenant_id")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
-    approved_date = models.DateField(auto_now_add=False, auto_now=True)
+    approved_date = models.DateField(null=True, blank=True)
+    approved_status = models.BooleanField(default=False)
     
     def __str__(self):
         return str(self.house)

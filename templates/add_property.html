@@ -19,7 +19,7 @@
     <div class="form-group">
       {{ form.flats.label_tag }}
       <br>
-      <a href="#" data-toggle="modal" data-target="#add-flat-modal">{{ form.new_flat.value }}</a>
+      <a href="#" data-toggle="modal" data-target="#add-flat-modal">Add Flat</a>
       {{ form.flats.errors }}
     </div>
     <div class="form-group">
@@ -50,7 +50,7 @@
         <form method="post" id="add-flat-form">
           {% csrf_token %}
           <div class="modal-body">
-            {{ form.flat_form.as_p }}
+            {{ flat_form.as_p }}
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Save</button>
@@ -83,5 +83,8 @@
       });
     });
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 {% endblock content %}
+

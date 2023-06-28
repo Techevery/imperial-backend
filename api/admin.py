@@ -18,9 +18,9 @@ class SlotAdmin(admin.ModelAdmin):
     search_fields = ['property_name']
 
 class ExpenseAdmin(admin.ModelAdmin):
-    list_display = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt']
-    list_filter = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt']
-    search_fields = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt']
+    list_display = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt', 'date', 'approved_date']
+    list_filter = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt', 'date', 'approved_date']
+    search_fields = ['amount', 'description', 'house', 'flat_id', 'tenant','user','receipt', 'date', 'approved_date']
     
 class MakePaymentAdmin(admin.ModelAdmin):
     list_display = ['description', 'amount', 'type', 'tenant']

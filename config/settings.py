@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "corsheaders",
     'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
+    'crispy_forms',
+    'bootstrap5',
 ]
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -165,6 +167,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'bootstrap5', 'semantic-ui')
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [(BASE_DIR.joinpath('static'))]

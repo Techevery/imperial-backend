@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <style>
+        .custom-form {
+  /* Add custom styles for the form container */
+  /* Example styles */
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+.custom-form .form-group {
+  /* Add custom styles for the form groups */
+  /* Example styles */
+  margin-bottom: 15px;
+}
+
+.custom-form .form-label {
+  /* Add custom styles for the form labels */
+  /* Example styles */
+  font-weight: bold;
+}
+
+.custom-form input[type="text"],
+.custom-form input[type="number"] {
+  /* Add custom styles for the form input fields */
+  /* Example styles */
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-form button[type="submit"] {
+  /* Add custom styles for the submit button */
+  /* Example styles */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add additional custom styles as needed */
+
+    </style>
+</head>
+
+
+  <form method="POST" action="" class="custom-form">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+      {{ form.name }}
+    </div>
+    
+    <div class="form-group">
+      <label for="{{ form.number_of_rooms.id_for_label }}" class="form-label">Number of Rooms</label>
+      {{ form.number_of_rooms }}
+    </div>
+    
+    <div class="form-group">
+      <label for="{{ form.number_of_living_rooms.id_for_label }}" class="form-label">Number of Living Rooms</label>
+      {{ form.number_of_living_rooms }}
+    </div>
+    
+    <div class="form-group">
+      <label for="{{ form.number_of_kitchens.id_for_label }}" class="form-label">Number of Kitchens</label>
+      {{ form.number_of_kitchens }}
+    </div>
+    
+    <div class="form-group">
+      <label for="{{ form.number_of_toilets.id_for_label }}" class="form-label">Number of Toilets</label>
+      {{ form.number_of_toilets }}
+    </div>
+    
+    <div class="form-group">
+      <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+      {{ form.description }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
+
+
