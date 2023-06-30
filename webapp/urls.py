@@ -14,5 +14,6 @@ urlpatterns =[
     path('property/web', views.property_web, name='property-web'),
     path('property/info', views.prop_info, name='prop-info'),
     path('payment/web', views.payments_web, name='payment-web'),
-    path('add-property', views.add_property, name='add-property')
+    path('add-property', views.add_property, name='add-property'),
+    path('expenses', views.expenses_view, name='expenses')
     ]

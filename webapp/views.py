@@ -282,5 +282,8 @@ def flat_create(request, id):
     
     return render(request, 'flat_create.html', {'form': form})
     
+def expenses_view(request):
+    return render(request, 'expenses.html')
+    
 
     
